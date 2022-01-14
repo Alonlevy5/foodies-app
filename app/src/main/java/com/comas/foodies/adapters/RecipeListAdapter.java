@@ -9,8 +9,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.comas.foodies.ui.home.HomeFragmentDirections;
 import com.comas.foodies.R;
 
 import java.util.List;
@@ -73,6 +74,9 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
             // Notify the adapter, that the data has changed so it can
             // update the RecyclerView to display the data.
             mAdapter.notifyDataSetChanged();
+
+            Navigation.findNavController(view)
+                    .navigate(HomeFragmentDirections.actionHomeToRecipe(String.valueOf(mPosition)));
 
         }
     }

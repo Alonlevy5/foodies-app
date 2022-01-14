@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.comas.foodies.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_recipe"
+            app:destination="@id/recipeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +26,13 @@
         android:name="com.comas.foodies.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.comas.foodies.RecipeFragment"
+        android:label="recipe_fragment"
+        tools:layout="@layout/recipe_fragment" >
+        <argument
+            android:name="recipe_id"
+            app:argType="string" />
+    </fragment>
 </navigation>
