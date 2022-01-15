@@ -11,8 +11,11 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_home_to_recipe"
-            app:destination="@id/recipeFragment" />
+            android:id="@+id/action_home_to_recipeDetails"
+            app:destination="@id/recipeDetailsFragment" />
+        <action
+            android:id="@+id/action_home_to_recipeCreate"
+            app:destination="@id/recipeCreateFragment" />
     </fragment>
 
     <fragment
@@ -28,11 +31,21 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="com.comas.foodies.RecipeFragment"
+        android:name="com.comas.foodies.ui.recipe.RecipeFragment"
         android:label="recipe_fragment"
-        tools:layout="@layout/recipe_fragment" >
+        tools:layout="@layout/recipe_fragment" />
+    <fragment
+        android:id="@+id/recipeDetailsFragment"
+        android:name="com.comas.foodies.ui.recipe.RecipeDetailsFragment"
+        android:label="fragment_recipe_details"
+        tools:layout="@layout/fragment_recipe_create" >
         <argument
             android:name="recipe_id"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/recipeCreateFragment"
+        android:name="com.comas.foodies.ui.recipe.RecipeCreateFragment"
+        android:label="fragment_recipe_create"
+        tools:layout="@layout/fragment_recipe_create" />
 </navigation>

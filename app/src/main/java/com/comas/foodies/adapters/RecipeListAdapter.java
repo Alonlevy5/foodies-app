@@ -13,16 +13,17 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import com.comas.foodies.ui.home.HomeFragmentDirections;
 import com.comas.foodies.R;
+import com.comas.foodies.model.Recipe;
 
 import java.util.List;
 
 
 public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder> {
 
-    private final List<String> mRecipeList;
+    private final List<Recipe> mRecipeList;
     private final LayoutInflater mInflater;
 
-    public RecipeListAdapter(Context context, List<String> recipeList) {
+    public RecipeListAdapter(Context context, List<Recipe> recipeList) {
         mInflater = LayoutInflater.from(context);
         this.mRecipeList = recipeList;
     }
@@ -36,8 +37,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RecipeListAdapter.RecipeViewHolder holder, int position) {
-        String mCurrent = mRecipeList.get(position);
-        holder.recipeItemText.setText(mCurrent);
+        Recipe mCurrent = mRecipeList.get(position);
+        holder.recipeItemText.setText(mCurrent.getName());
     }
 
     /**
@@ -67,16 +68,9 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         public void onClick(View view) {
             // Get the position of the item that was clicked.
             int mPosition = getLayoutPosition();
-            // Use that to access the affected item in mWordList.
-            String element = mRecipeList.get(mPosition);
-            // Change the word in the mWordList.
-            mRecipeList.set(mPosition, "Clicked! " + element);
-            // Notify the adapter, that the data has changed so it can
-            // update the RecyclerView to display the data.
-            mAdapter.notifyDataSetChanged();
 
             Navigation.findNavController(view)
-                    .navigate(HomeFragmentDirections.actionHomeToRecipe(String.valueOf(mPosition)));
+                    .navigate(HomeFragmentDirections.actionHomeToRecipeDetails(String.valueOf(mPosition)));
 
         }
     }
