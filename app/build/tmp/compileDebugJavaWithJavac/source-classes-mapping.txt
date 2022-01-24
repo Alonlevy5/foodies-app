@@ -8,6 +8,9 @@ com/comas/foodies/ui/home/HomeFragment.java
  com.comas.foodies.ui.home.HomeFragment
  com.comas.foodies.ui.home.HomeFragment$1
  com.comas.foodies.ui.home.HomeFragment$2
+com/comas/foodies/adapters/RecipeListAdapter.java
+ com.comas.foodies.adapters.RecipeListAdapter
+ com.comas.foodies.adapters.RecipeListAdapter$RecipeViewHolder
 com/comas/foodies/ui/slideshow/SlideshowFragment.java
  com.comas.foodies.ui.slideshow.SlideshowFragment
  com.comas.foodies.ui.slideshow.SlideshowFragment$1
@@ -38,6 +41,5 @@ com/comas/foodies/ui/home/HomeFragmentDirections.java
  com.comas.foodies.ui.home.HomeFragmentDirections$ActionHomeToRecipeDetails
 com/comas/foodies/RecipeViewModel.java
  com.comas.foodies.RecipeViewModel
-com/comas/foodies/adapters/RecipeListAdapter.java
- com.comas.foodies.adapters.RecipeListAdapter
- com.comas.foodies.adapters.RecipeListAdapter$RecipeViewHolder
+com/comas/foodies/RegisterFragment.java
+ com.comas.foodies.RegisterFragment

@@ -112,6 +112,10 @@
         "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     },
     {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_register.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\fragment_register.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
