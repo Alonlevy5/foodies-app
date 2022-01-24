@@ -48,4 +48,9 @@
         android:name="com.comas.foodies.ui.recipe.RecipeCreateFragment"
         android:label="fragment_recipe_create"
         tools:layout="@layout/fragment_recipe_create" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.comas.foodies.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

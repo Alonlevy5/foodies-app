@@ -1,0 +1,43 @@
+com/comas/foodies/ui/recipe/RecipeFragment.java
+ com.comas.foodies.ui.recipe.RecipeFragment
+com/comas/foodies/ui/recipe/RecipeDetailsFragmentArgs.java
+ com.comas.foodies.ui.recipe.RecipeDetailsFragmentArgs
+ com.comas.foodies.ui.recipe.RecipeDetailsFragmentArgs$1
+ com.comas.foodies.ui.recipe.RecipeDetailsFragmentArgs$Builder
+com/comas/foodies/ui/home/HomeFragment.java
+ com.comas.foodies.ui.home.HomeFragment
+ com.comas.foodies.ui.home.HomeFragment$1
+ com.comas.foodies.ui.home.HomeFragment$2
+com/comas/foodies/ui/slideshow/SlideshowFragment.java
+ com.comas.foodies.ui.slideshow.SlideshowFragment
+ com.comas.foodies.ui.slideshow.SlideshowFragment$1
+com/comas/foodies/model/Recipe.java
+ com.comas.foodies.model.Recipe
+com/comas/foodies/ui/gallery/GalleryFragment.java
+ com.comas.foodies.ui.gallery.GalleryFragment
+ com.comas.foodies.ui.gallery.GalleryFragment$1
+com/comas/foodies/ui/recipe/RecipeCreateFragment.java
+ com.comas.foodies.ui.recipe.RecipeCreateFragment
+com/comas/foodies/ui/gallery/GalleryViewModel.java
+ com.comas.foodies.ui.gallery.GalleryViewModel
+com/comas/foodies/BuildConfig.java
+ com.comas.foodies.BuildConfig
+com/comas/foodies/ui/slideshow/SlideshowViewModel.java
+ com.comas.foodies.ui.slideshow.SlideshowViewModel
+com/comas/foodies/ui/home/HomeViewModel.java
+ com.comas.foodies.ui.home.HomeViewModel
+com/comas/foodies/ui/recipe/RecipeDetailsFragment.java
+ com.comas.foodies.ui.recipe.RecipeDetailsFragment
+com/comas/foodies/model/Model.java
+ com.comas.foodies.model.Model
+com/comas/foodies/MainActivity.java
+ com.comas.foodies.MainActivity
+com/comas/foodies/ui/home/HomeFragmentDirections.java
+ com.comas.foodies.ui.home.HomeFragmentDirections
+ com.comas.foodies.ui.home.HomeFragmentDirections$1
+ com.comas.foodies.ui.home.HomeFragmentDirections$ActionHomeToRecipeDetails
+com/comas/foodies/RecipeViewModel.java
+ com.comas.foodies.RecipeViewModel
+com/comas/foodies/adapters/RecipeListAdapter.java
+ com.comas.foodies.adapters.RecipeListAdapter
+ com.comas.foodies.adapters.RecipeListAdapter$RecipeViewHolder
