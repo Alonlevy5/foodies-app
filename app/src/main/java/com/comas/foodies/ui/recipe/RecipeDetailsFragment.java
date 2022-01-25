@@ -63,7 +63,7 @@ public class RecipeDetailsFragment extends RecipeFragment {
         String recipeId = RecipeDetailsFragmentArgs.fromBundle(getArguments()).getRecipeId();
         mRecipe = Model.instance.getRecipeById(recipeId);
 
-        setContainerData();
+       // setContainerData();
         return view;
     }
 
@@ -81,8 +81,7 @@ public class RecipeDetailsFragment extends RecipeFragment {
     }
 
     private void setContainerData() {
-        mRecipeNameEditText.setText(mRecipe.getName());
-        mRecipeDescEditText.setText(mRecipe.getDesc());
+            mRecipeNameEditText.setText(mRecipe.getName());
+            mRecipeDescEditText.setText(mRecipe.getDesc());
+        }
     }
-
-}

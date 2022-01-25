@@ -78,7 +78,8 @@ public class RecipeFragment extends Fragment {
         mSaveButton.setEnabled(false);
         mDeleteButton.setEnabled(false);
         mEditButton.setEnabled(false);
-        Model.instance.addRecipe(new Recipe(
+        // TODO: 1/25/2022 Fix ID!!!!!!!
+        Model.instance.addRecipe(new Recipe("2",
                 mRecipeNameEditText.getText().toString(),
                 mRecipeDescEditText.getText().toString(),
                 null), ()->{

@@ -4,6 +4,10 @@
         "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_register.xml.flat",
+        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\fragment_register.xml"
+    },
+    {
         "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },

@@ -9,13 +9,13 @@
         android:id="@+id/nav_home"
         android:name="com.comas.foodies.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_recipeDetails"
             app:destination="@id/recipeDetailsFragment" />
         <action
-            android:id="@+id/action_home_to_recipeCreate"
-            app:destination="@id/recipeFragment" />
+            android:id="@+id/actionHomeToRecipeCreate"
+            app:destination="@id/recipeCreateFragment" />
     </fragment>
 
     <fragment

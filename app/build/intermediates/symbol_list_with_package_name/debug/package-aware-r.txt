@@ -1832,6 +1832,7 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id action0
+id actionHomeToRecipeCreate
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1843,7 +1844,6 @@ id action_container
 id action_context_bar
 id action_divider
 id action_global_recipeFragment
-id action_home_to_recipeCreate
 id action_home_to_recipeDetails
 id action_image
 id action_menu_divider
@@ -1947,8 +1947,12 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editTextTextEmailAddress_registerFragment
+id editTextTextPassword_registerFragment
+id editTextTextRePassword_registerFragment
 id edit_query
 id elastic
+id email_registerFragment_tv
 id end
 id endToStart
 id end_padder
@@ -2091,6 +2095,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password_registerFragment_tv
 id password_toggle
 id path
 id pathRelative
@@ -2118,6 +2123,8 @@ id recipelist_item_image
 id recipelist_item_text
 id rectangles
 id recyclerview
+id repeatPassword_registerFragment_tv
+id resgisterBtn_registerFragment
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2216,6 +2223,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id titel_registerFragment_tv
 id title
 id titleDividerNoCustom
 id title_template
@@ -2331,6 +2339,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_gallery
 layout fragment_home
+layout fragment_register
 layout fragment_slideshow
 layout material_chip_input_combo
 layout material_clock_display

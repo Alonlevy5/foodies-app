@@ -29,40 +29,45 @@ public final class RecipeDao_Impl implements RecipeDao {
     this.__insertionAdapterOfRecipe = new EntityInsertionAdapter<Recipe>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Recipe` (`name`,`desc`,`image`) VALUES (?,?,?)";
+        return "INSERT OR REPLACE INTO `Recipe` (`image`,`id`,`name`,`desc`) VALUES (?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Recipe value) {
-        if (value.getName() == null) {
+        if (value.getImage() == null) {
           stmt.bindNull(1);
         } else {
-          stmt.bindString(1, value.getName());
+          stmt.bindString(1, value.getImage());
         }
-        if (value.getDesc() == null) {
+        if (value.getId() == null) {
           stmt.bindNull(2);
         } else {
-          stmt.bindString(2, value.getDesc());
+          stmt.bindString(2, value.getId());
         }
-        if (value.getImage() == null) {
+        if (value.getName() == null) {
           stmt.bindNull(3);
         } else {
-          stmt.bindString(3, value.getImage());
+          stmt.bindString(3, value.getName());
+        }
+        if (value.getDesc() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getDesc());
         }
       }
     };
     this.__deletionAdapterOfRecipe = new EntityDeletionOrUpdateAdapter<Recipe>(__db) {
       @Override
       public String createQuery() {
-        return "DELETE FROM `Recipe` WHERE `name` = ?";
+        return "DELETE FROM `Recipe` WHERE `id` = ?";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Recipe value) {
-        if (value.getName() == null) {
+        if (value.getId() == null) {
           stmt.bindNull(1);
         } else {
-          stmt.bindString(1, value.getName());
+          stmt.bindString(1, value.getId());
         }
       }
     };
@@ -99,13 +104,28 @@ public final class RecipeDao_Impl implements RecipeDao {
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
+      final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
       final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
       final int _cursorIndexOfDesc = CursorUtil.getColumnIndexOrThrow(_cursor, "desc");
-      final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
       final List<Recipe> _result = new ArrayList<Recipe>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Recipe _item;
         _item = new Recipe();
+        final String _tmpImage;
+        if (_cursor.isNull(_cursorIndexOfImage)) {
+          _tmpImage = null;
+        } else {
+          _tmpImage = _cursor.getString(_cursorIndexOfImage);
+        }
+        _item.setImage(_tmpImage);
+        final String _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getString(_cursorIndexOfId);
+        }
+        _item.setId(_tmpId);
         final String _tmpName;
         if (_cursor.isNull(_cursorIndexOfName)) {
           _tmpName = null;
@@ -120,13 +140,6 @@ public final class RecipeDao_Impl implements RecipeDao {
           _tmpDesc = _cursor.getString(_cursorIndexOfDesc);
         }
         _item.setDesc(_tmpDesc);
-        final String _tmpImage;
-        if (_cursor.isNull(_cursorIndexOfImage)) {
-          _tmpImage = null;
-        } else {
-          _tmpImage = _cursor.getString(_cursorIndexOfImage);
-        }
-        _item.setImage(_tmpImage);
         _result.add(_item);
       }
       return _result;

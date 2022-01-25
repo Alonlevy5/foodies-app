@@ -24,7 +24,7 @@ public class HomeFragmentDirections {
 
   @NonNull
   public static NavDirections actionHomeToRecipeCreate() {
-    return new ActionOnlyNavDirections(R.id.action_home_to_recipeCreate);
+    return new ActionOnlyNavDirections(R.id.actionHomeToRecipeCreate);
   }
 
   @NonNull
