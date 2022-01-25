@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +21,6 @@ import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -28,6 +28,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private RecyclerView mRecyclerView;
     private RecipeListAdapter mAdapter;
+    ProgressBar progressBar;
 
     private List<Recipe> mRecipeList;
 
@@ -40,8 +41,9 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-        mRecipeList = Model.instance.getAllRecipes();
+        progressBar=root.findViewById(R.id.Home_frag_progressBar);
+        progressBar.setVisibility(View.GONE);
+        refresh();
 
         // Get a handle to the RecyclerView.
         mRecyclerView = root.findViewById(R.id.recyclerview);
@@ -52,7 +54,7 @@ public class HomeFragment extends Fragment {
         // Give the RecyclerView a default layout manager.
         mRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
-        FloatingActionButton fab = root.findViewById(R.id.add_fab);
+        FloatingActionButton fab = root.findViewById(R.id.recipeFragment);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,5 +63,17 @@ public class HomeFragment extends Fragment {
         });
 
         return root;
+    }
+
+    private void refresh() {
+        progressBar.setVisibility(View.VISIBLE);
+        Model.instance.getAllRecipes((list)->{
+            mRecipeList = list;
+            mAdapter.notifyDataSetChanged();
+            progressBar.setVisibility(View.GONE);
+
+
+        });
+
     }
 }

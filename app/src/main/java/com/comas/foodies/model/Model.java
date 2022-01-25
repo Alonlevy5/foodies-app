@@ -1,29 +1,44 @@
 package com.comas.foodies.model;
 
-import java.util.LinkedList;
+import android.location.GnssAntennaInfo;
+import android.os.Handler;
+import android.os.Looper;
+
+import androidx.core.os.HandlerCompat;
+
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class Model {
-
     public final static Model instance = new Model();
 
-    private List<Recipe> recipes = new LinkedList<>();
+    Executor executor=Executors.newFixedThreadPool(1);
 
+    Handler mainThread= HandlerCompat.createAsync(Looper.getMainLooper());
+
+    ModelFirebase modelFirebase= new ModelFirebase();
     private Model() {
-        recipes.add(new Recipe("0", "MARAK OF", "Put one sasi gez inside", null));
-        recipes.add(new Recipe("1", "HAMIN", "Dont eat to much", null));
 
     }
 
-    public List<Recipe> getAllRecipes() {
-        return recipes;
+    public interface GetAllRecipesListener{
+        void onComplete(List<Recipe> list);
+    }
+    public void getAllRecipes(GetAllRecipesListener listener) {
+        modelFirebase.getAllRecipes(listener);
     }
 
-    public Recipe getRecipeById(String id) {
-        return recipes.get(Integer.parseInt(id));
+    public Recipe getRecipeById(String recipeId) {
+        modelFirebase.getRecipeById(recipeId);
+        return null;
     }
 
-    public void addRecipe(Recipe recipe) {
-        recipes.add(recipe);
+    public interface AddRecipeListener{
+        void onComplete();
     }
+    public void addRecipe(Recipe recipe,AddRecipeListener listener) {
+        modelFirebase.addRecipe(recipe,listener);
+    }
+
 }

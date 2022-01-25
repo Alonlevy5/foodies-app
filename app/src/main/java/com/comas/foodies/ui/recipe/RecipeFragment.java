@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.comas.foodies.R;
 import com.comas.foodies.model.Model;
@@ -33,6 +34,7 @@ public class RecipeFragment extends Fragment {
     protected Button mSaveButton;
     protected Button mEditButton;
     protected Button mDeleteButton;
+    ProgressBar progressBar;
 
     public static RecipeFragment newInstance() {
         return new RecipeFragment();
@@ -42,12 +44,6 @@ public class RecipeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.recipe_fragment, container, false);
-        initializeViewElements(view);
-        initializeViewHandlers();
-        return view;
-    }
-
-    private void initializeViewElements(View view) {
         mRecipeImageView = view.findViewById(R.id.recipe_frag_image);
         mEditImageButton = view.findViewById(R.id.recipe_frag_edit_image);
         mRecipeNameEditText = view.findViewById(R.id.recipe_frag_name_text);
@@ -55,11 +51,21 @@ public class RecipeFragment extends Fragment {
         mSaveButton = view.findViewById(R.id.recipe_frag_save_button);
         mEditButton = view.findViewById(R.id.recipe_frag_edit_button);
         mDeleteButton = view.findViewById(R.id.recipe_frag_delete_button);
+        progressBar=view.findViewById(R.id.recipe_progressBar);
+        progressBar.setVisibility(View.GONE);
+        mSaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleSave(v);
+            }
+        });
+
+        return view;
     }
 
-    private void initializeViewHandlers() {
-        mSaveButton.setOnClickListener(this::handleSave);
-    }
+
+
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -68,10 +74,17 @@ public class RecipeFragment extends Fragment {
         // TODO: Use the ViewModel
     }
     private void handleSave(View view) {
-        Model.instance.addRecipe(new Recipe("2",
+        progressBar.setVisibility(View.VISIBLE);
+        mSaveButton.setEnabled(false);
+        mDeleteButton.setEnabled(false);
+        mEditButton.setEnabled(false);
+        Model.instance.addRecipe(new Recipe(
                 mRecipeNameEditText.getText().toString(),
                 mRecipeDescEditText.getText().toString(),
-                null));
-        Navigation.findNavController(view).popBackStack();
+                null), ()->{
+            Navigation.findNavController(mRecipeNameEditText).navigateUp();
+
+        });
+
     }
 }

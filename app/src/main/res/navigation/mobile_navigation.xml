@@ -15,7 +15,7 @@
             app:destination="@id/recipeDetailsFragment" />
         <action
             android:id="@+id/action_home_to_recipeCreate"
-            app:destination="@id/recipeCreateFragment" />
+            app:destination="@id/recipeFragment" />
     </fragment>
 
     <fragment
@@ -47,5 +47,5 @@
         android:id="@+id/recipeCreateFragment"
         android:name="com.comas.foodies.ui.recipe.RecipeCreateFragment"
         android:label="fragment_recipe_create"
-        tools:layout="@layout/fragment_recipe_create" />
+        tools:layout="@layout/fragment_recipe_create" /><action android:id="@+id/action_global_recipeFragment" app:destination="@id/recipeFragment"/>
 </navigation>
