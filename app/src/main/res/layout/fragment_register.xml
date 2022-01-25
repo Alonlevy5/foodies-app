@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterFragment">
+
+    <TextView
+        android:id="@+id/titel_registerFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="70dp"
+        android:text="Register"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/email_registerFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="28dp"
+        android:text="Email"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress_registerFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/password_registerFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="4dp"
+        android:text="Password"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword_registerFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_registerFragment_tv" />
+
+    <TextView
+        android:id="@+id/repeatPassword_registerFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="4dp"
+        android:text="Repeat Password"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextRePassword_registerFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_registerFragment_tv" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress_registerFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="57dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toEndOf="@+id/email_registerFragment_tv"
+        app:layout_constraintTop_toBottomOf="@+id/titel_registerFragment_tv" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword_registerFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="1dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/password_registerFragment_tv"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress_registerFragment" />
+
+    <EditText
+        android:id="@+id/editTextTextRePassword_registerFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/repeatPassword_registerFragment_tv"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword_registerFragment" />
+
+    <Button
+        android:id="@+id/resgisterBtn_registerFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="78dp"
+        android:text="Register"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextRePassword_registerFragment" />
+</androidx.constraintlayout.widget.ConstraintLayout>
