@@ -25,6 +25,8 @@ import com.comas.foodies.RecipeViewModel;
 
 public class RecipeFragment extends Fragment {
 
+    //TODO need to fix problem with recipe Details and Crate xml design not appearing and cannot change
+
     private RecipeViewModel mViewModel;
 
     protected ImageView mRecipeImageView;
@@ -78,11 +80,11 @@ public class RecipeFragment extends Fragment {
         mSaveButton.setEnabled(false);
         mDeleteButton.setEnabled(false);
         mEditButton.setEnabled(false);
-        // TODO: 1/25/2022 Fix ID!!!!!!!
-        Model.instance.addRecipe(new Recipe("2",
+        // TODO 24/02/22 fix the const id problem, id generate auto in fireBase
+        Model.instance.addRecipe(new Recipe(
                 mRecipeNameEditText.getText().toString(),
-                mRecipeDescEditText.getText().toString(),
-                null), ()->{
+                mRecipeDescEditText.getText().toString()
+        ), ()->{
             Navigation.findNavController(mRecipeNameEditText).navigateUp();
 
         });

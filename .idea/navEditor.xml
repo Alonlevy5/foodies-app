@@ -8,6 +8,11 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="action_global_recipeFragment">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
                   <entry key="nav_gallery">
                     <value>
                       <LayoutPositions>
@@ -31,7 +36,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_home_to_recipeCreate">
+                            <entry key="actionHomeToRecipeCreate">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -63,8 +68,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="724" />
+                            <option name="x" value="223" />
+                            <option name="y" value="731" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -75,8 +80,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="368" />
+                            <option name="x" value="361" />
+                            <option name="y" value="377" />
                           </Point>
                         </option>
                       </LayoutPositions>

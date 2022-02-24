@@ -19,19 +19,22 @@ import java.util.List;
 import java.util.Map;
 
 public class ModelFirebase {
-   FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    //TODO 24/02/22 need to add delete update and getById to fireBase
     public void getAllRecipes(Model.GetAllRecipesListener listener) {
         db.collection(Recipe.collectionName)
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>(){
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        List<Recipe> list=new LinkedList<Recipe>();
-                        if (task.isSuccessful()){
-                            for(QueryDocumentSnapshot doc:task.getResult() ){
-                                Recipe recipe=Recipe.create(doc.getData());
-                                if(recipe !=null){
+                        List<Recipe> list = new LinkedList<Recipe>();
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                Recipe recipe = Recipe.create(doc.getData());
+                                if (recipe != null) {
+                                    recipe.setId(doc.getId());
+                                    Log.d("TAG","id is " + recipe.getId());
                                     list.add(recipe);
                                 }
 
@@ -47,14 +50,18 @@ public class ModelFirebase {
     public void addRecipe(Recipe recipe, Model.AddRecipeListener listener) {
         Map<String, Object> json = recipe.toJson();
 
+        //add(object) is for adding and generate random id in fireBase
+        //document(string) and set(object) is for document() give the name he get to the doc
+        //set() add it to fireBase
         db.collection(Recipe.collectionName)
-                .document(recipe.getId())
-                .set(json)
+                //.document(recipe.getId())
+                //.set(json)
+                .add(json)
                 .addOnSuccessListener(unused -> listener.onComplete())
                 .addOnFailureListener(e -> listener.onComplete());
-
     }
 
     public void getRecipeById(String recipeId) {
+
     }
 }

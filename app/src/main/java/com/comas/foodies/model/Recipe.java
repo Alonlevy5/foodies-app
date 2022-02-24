@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.Timestamp;
+import com.google.firebase.firestore.Exclude;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +22,17 @@ public class Recipe {
 
     public Recipe(){
 
+    }
+
+    public Recipe ( String name, String desc){
+        this.name = name;
+        this.desc = desc;
+    }
+
+    public Recipe( String name, String desc, String image) {
+        this.name = name;
+        this.desc = desc;
+        this.image = image;
     }
 
     public Recipe( String id,String name, String desc, String image) {

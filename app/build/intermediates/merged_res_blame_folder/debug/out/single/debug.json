@@ -1,150 +1,150 @@
 [
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_register.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\fragment_register.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_camera.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_gallery.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\fragment_gallery.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_content_main.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\content_main.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\navigation_mobile_navigation.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable_side_nav_bar.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_slideshow.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_recipelist_item.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\recipelist_item.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\menu_main.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\menu\\main.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_nav_header_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\nav_header_main.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_register.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\fragment_register.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable_side_nav_bar.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_camera.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_camera.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\menu_activity_main_drawer.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\menu_activity_main_drawer.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_app_bar_main.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_nav_header_main.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_recipelist_item.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\recipelist_item.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_gallery.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_slideshow.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\fragment_slideshow.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_gallery.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_gallery.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_gallery.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\fragment_gallery.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\menu_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_slideshow.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\fragment_slideshow.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_slideshow.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_menu_slideshow.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_recipe_fragment.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\recipe_fragment.xml"
     },
     {
-        "merged": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_recipe_fragment.xml.flat",
-        "source": "D:\\Users\\yarde\\Downloads\\foodies-app\\app\\src\\main\\res\\layout\\recipe_fragment.xml"
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_app_bar_main.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\app_bar_main.xml"
     }
 ]
