@@ -2339,6 +2339,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_gallery
 layout fragment_home
+layout fragment_recipe_create
 layout fragment_register
 layout fragment_slideshow
 layout material_chip_input_combo

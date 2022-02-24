@@ -5,15 +5,13 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +32,7 @@ public class ModelFirebase {
                                 Recipe recipe = Recipe.create(doc.getData());
                                 if (recipe != null) {
                                     recipe.setId(doc.getId());
-                                    Log.d("TAG","id is " + recipe.getId());
+                                    Log.d("TAG", "id is " + recipe.getId());
                                     list.add(recipe);
                                 }
 
@@ -54,14 +52,26 @@ public class ModelFirebase {
         //document(string) and set(object) is for document() give the name he get to the doc
         //set() add it to fireBase
         db.collection(Recipe.collectionName)
-                //.document(recipe.getId())
-                //.set(json)
-                .add(json)
+                .document(recipe.getName())
+                .set(json)
+                //.add(json)
                 .addOnSuccessListener(unused -> listener.onComplete())
                 .addOnFailureListener(e -> listener.onComplete());
     }
 
-    public void getRecipeById(String recipeId) {
-
+    public void getRecipeByName(String recipeName, Model.GetRecipesByName listener) {
+        db.collection(Recipe.collectionName)
+                .document(recipeName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        Recipe recipe = null;
+                        if (task.isSuccessful() & task.getResult()!= null){
+                            recipe = Recipe.create(task.getResult().getData());
+                        }
+                        listener.onComplete(recipe);
+                    }
+                });
     }
 }

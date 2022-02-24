@@ -12,6 +12,10 @@
         "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_recipe_create.xml.flat",
+        "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\layout\\fragment_recipe_create.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\User\\AndroidStudioProjects\\foodies-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },

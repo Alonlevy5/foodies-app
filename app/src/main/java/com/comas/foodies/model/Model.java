@@ -1,6 +1,5 @@
 package com.comas.foodies.model;
 
-import android.location.GnssAntennaInfo;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -29,9 +28,13 @@ public class Model {
         modelFirebase.getAllRecipes(listener);
     }
 
-    public Recipe getRecipeById(String recipeId) {
-        modelFirebase.getRecipeById(recipeId);
-        return null;
+    //try
+    public interface GetRecipesByName {
+        void onComplete(Recipe recipe);
+    }
+
+    public void getRecipeByName(String recipeId, GetRecipesByName listener) {
+        modelFirebase.getRecipeByName(recipeId,listener);
     }
 
     public interface AddRecipeListener{

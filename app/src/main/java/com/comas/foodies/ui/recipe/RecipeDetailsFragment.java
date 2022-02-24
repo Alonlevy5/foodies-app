@@ -61,22 +61,25 @@ public class RecipeDetailsFragment extends RecipeFragment {
         setContainerVisibility();
 
         String recipeId = RecipeDetailsFragmentArgs.fromBundle(getArguments()).getRecipeId();
-        mRecipe = Model.instance.getRecipeById(recipeId);
+//        mRecipe = Model.instance.getRecipeById(recipeId);
+        Model.instance.getRecipeByName(recipeId,(n)->{
+
+        });
 
        // setContainerData();
         return view;
     }
 
     public void setContainerVisibility() {
-        mEditImageButton.setVisibility(View.GONE);
-        mDeleteButton.setVisibility(View.GONE);
-        mEditButton.setVisibility(View.GONE);
-        mSaveButton.setVisibility(View.GONE);
+//        mEditImageButton.setVisibility(View.GONE);
+//        mDeleteButton.setVisibility(View.GONE);
+//        mEditButton.setVisibility(View.GONE);
+//        mSaveButton.setVisibility(View.GONE);
 
         mRecipeNameEditText.setKeyListener(null);
-        mRecipeNameEditText.setBackgroundResource(android.R.color.transparent);
+//        mRecipeNameEditText.setBackgroundResource(android.R.color.transparent);
         mRecipeDescEditText.setKeyListener(null);
-        mRecipeDescEditText.setBackgroundResource(android.R.color.transparent);
+//        mRecipeDescEditText.setBackgroundResource(android.R.color.transparent);
 
     }
 
