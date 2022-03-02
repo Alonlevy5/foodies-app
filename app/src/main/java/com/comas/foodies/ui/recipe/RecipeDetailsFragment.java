@@ -61,10 +61,11 @@ public class RecipeDetailsFragment extends RecipeFragment {
         setContainerVisibility();
 
         String recipeId = RecipeDetailsFragmentArgs.fromBundle(getArguments()).getRecipeId();
+        //TODO fix/complete the findBy function
 //        mRecipe = Model.instance.getRecipeById(recipeId);
-        Model.instance.getRecipeByName(recipeId,(n)->{
-
-        });
+//        Model.instance.getRecipeByName(recipeId,(n)->{
+//
+//        });
 
        // setContainerData();
         return view;
