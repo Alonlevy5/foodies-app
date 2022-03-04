@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/details_recipe_img" />
 
     <TextView
-        android:id="@+id/details_recipe_description_tv"
+        android:id="@+id/details_recipe_id_tv"
         android:layout_width="115dp"
         android:layout_height="30dp"
         android:layout_marginStart="24dp"
@@ -73,10 +73,10 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="@+id/details_recipe_description_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/details_recipe_id_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/details_recipe_description_tv"
-        app:layout_constraintTop_toTopOf="@+id/details_recipe_description_tv" />
+        app:layout_constraintStart_toEndOf="@+id/details_recipe_id_tv"
+        app:layout_constraintTop_toTopOf="@+id/details_recipe_id_tv" />
 
     <Button
         android:id="@+id/details_recipe_edit_btn"
@@ -115,5 +115,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.614" />
+
+    <TextView
+        android:id="@+id/details_recipe_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="352dp"
+        android:text="description:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/details_recipe_desc_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/details_recipe_desc_tv"
+        app:layout_constraintTop_toBottomOf="@+id/details_recipe_Id_ET" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

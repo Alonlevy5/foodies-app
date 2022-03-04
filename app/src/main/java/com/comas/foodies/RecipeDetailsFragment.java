@@ -78,11 +78,13 @@ public class RecipeDetailsFragment extends Fragment {
             public void onComplete(Recipe recipe) {
                 nameTv.setText(recipe.getName());
                 idTv.setText(recipe.getId());
+                descEt.setText(recipe.getDesc());
             }
         });
 
         nameTv = view.findViewById(R.id.details_recipe_name_ET);
         idTv = view.findViewById(R.id.details_recipe_Id_ET);
+        descEt = view.findViewById(R.id.details_recipe_desc_ET);
 
 //        Button backBtn = view.findViewById(R.id.deta);
 //        backBtn.setOnClickListener((v) -> {
@@ -91,7 +93,7 @@ public class RecipeDetailsFragment extends Fragment {
         return view;
 
 
-        //TODO fix/complete the findBy function
+
 //        mRecipe = Model.instance.getRecipeById(recipeId);
 //        Model.instance.getRecipeByName(recipeId,(n)->{
 //
