@@ -98,6 +98,8 @@ public class AddRecipeFragment extends Fragment {
 
         saveBtn.setOnClickListener(v -> save());
 
+        cancelBtn.setOnClickListener(v -> Navigation.findNavController(v).navigateUp());
+
         return view;
     }
 

@@ -11,9 +11,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -31,8 +33,6 @@ public class ModelFirebase {
         db.setFirestoreSettings(settings);
     }
 
-    //TODO 4/3/22 need to add delete update from fireBase
-
 
     public void getAllRecipes(Model.GetAllRecipesListener listener) {
 
@@ -46,7 +46,7 @@ public class ModelFirebase {
                             for (QueryDocumentSnapshot doc : task.getResult()) {
                                 Recipe recipe = Recipe.create(doc.getData());
                                 if (recipe != null) {
-                                    recipe.setId(doc.getId());
+                                    //recipe.setId(doc.getId());
                                     Log.d("TAG", "id is " + recipe.getId());
                                     list.add(recipe);
                                 }
@@ -91,6 +91,39 @@ public class ModelFirebase {
                 });
     }
 
+
+    public void updateRecipeById(String recipeId, String name, String desc, Model.UpdateRecipeById listener) {
+        Map<String, Object> updateRecipe = new HashMap<>();
+        //crate the filed we want to update and give it to firebase
+        updateRecipe.put("name", name);
+        updateRecipe.put("desc", desc);
+
+
+        db.collection(Recipe.collectionName)
+                .document(recipeId)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+                        if (task.isSuccessful() & task.getResult() != null) {
+
+                            db.collection(Recipe.collectionName)
+                                    .document(recipeId)
+                                    .update(updateRecipe)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            Recipe recipe = null;
+                                            recipe = Recipe.create(task.getResult().getData());
+                                            listener.onComplete(recipe);
+                                        }
+                                    });
+                        }
+                    }
+                });
+
+    }
 
     public void deleteRecipeById(String recipeId, Model.DeleteRecipeById listener) {
 

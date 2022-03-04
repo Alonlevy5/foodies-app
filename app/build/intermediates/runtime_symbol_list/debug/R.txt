@@ -1848,6 +1848,7 @@ int id action_menu_presenter 0x7f08003f
 int id action_mode_bar 0x7f080040
 int id action_mode_bar_stub 0x7f080041
 int id action_mode_close_button 0x7f080042
+int id action_recipeDetailsFragment_to_recipeEditFragment 0x7f0801e4
 int id action_recipeListRv_to_recipeAdd 0x7f080043
 int id action_recipeListRv_to_recipeDetails 0x7f080044
 int id action_settings 0x7f080045
@@ -1967,6 +1968,9 @@ int id editTextTextEmailAddress_registerFragment 0x7f0800b4
 int id editTextTextPassword_registerFragment 0x7f0800b5
 int id editTextTextRePassword_registerFragment 0x7f0800b6
 int id edit_query 0x7f0800b7
+int id edit_recipe_descET 0x7f0801e5
+int id edit_recipe_namET 0x7f0801e6
+int id edit_recipe_saveBtn 0x7f0801e7
 int id elastic 0x7f0800b8
 int id email_registerFragment_tv 0x7f0800b9
 int id end 0x7f0800ba
@@ -2012,6 +2016,7 @@ int id ignore 0x7f0800e1
 int id ignoreRequest 0x7f0800e2
 int id image 0x7f0800e3
 int id imageView 0x7f0800e4
+int id imageView2 0x7f0801e8
 int id include 0x7f0800e5
 int id info 0x7f0800e6
 int id invisible 0x7f0800e7
@@ -2128,6 +2133,7 @@ int id progress_horizontal 0x7f080155
 int id radio 0x7f080156
 int id ratio 0x7f080157
 int id recipeDetailsFragment 0x7f080158
+int id recipeEditFragment 0x7f0801e9
 int id recipe_frag_edit_image 0x7f080159
 int id recipelist_item_image 0x7f08015a
 int id recipelist_item_text 0x7f08015b
@@ -2221,6 +2227,8 @@ int id textView 0x7f0801b2
 int id textView2 0x7f0801b3
 int id textView3 0x7f0801b4
 int id textView4 0x7f0801b5
+int id textView5 0x7f0801ea
+int id textView6 0x7f0801eb
 int id text_gallery 0x7f0801b6
 int id text_input_end_icon 0x7f0801b7
 int id text_input_error_icon 0x7f0801b8
@@ -2351,6 +2359,7 @@ int layout fragment_add_recipe 0x7f0b0031
 int layout fragment_gallery 0x7f0b0032
 int layout fragment_home 0x7f0b0033
 int layout fragment_recipe_details 0x7f0b0034
+int layout fragment_recipe_edit 0x7f0b0084
 int layout fragment_register 0x7f0b0035
 int layout fragment_slideshow 0x7f0b0036
 int layout material_chip_input_combo 0x7f0b0037

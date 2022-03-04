@@ -56,4 +56,12 @@ public class Model {
         modelFirebase.deleteRecipeById(recipeId,listener);
     }
 
+    public interface UpdateRecipeById{
+        void onComplete(Recipe recipe);
+    }
+
+    public void updateRecipeById(String recipeID, String name, String desc, UpdateRecipeById listener){
+        modelFirebase.updateRecipeById(recipeID,name,desc,listener);
+    }
+
 }

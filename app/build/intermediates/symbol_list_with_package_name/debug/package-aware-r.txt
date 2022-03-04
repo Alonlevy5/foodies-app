@@ -1849,6 +1849,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_recipeDetailsFragment_to_recipeEditFragment
 id action_recipeListRv_to_recipeAdd
 id action_recipeListRv_to_recipeDetails
 id action_settings
@@ -1968,6 +1969,9 @@ id editTextTextEmailAddress_registerFragment
 id editTextTextPassword_registerFragment
 id editTextTextRePassword_registerFragment
 id edit_query
+id edit_recipe_descET
+id edit_recipe_namET
+id edit_recipe_saveBtn
 id elastic
 id email_registerFragment_tv
 id end
@@ -2013,6 +2017,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView2
 id include
 id info
 id invisible
@@ -2129,6 +2134,7 @@ id progress_horizontal
 id radio
 id ratio
 id recipeDetailsFragment
+id recipeEditFragment
 id recipe_frag_edit_image
 id recipelist_item_image
 id recipelist_item_text
@@ -2222,6 +2228,8 @@ id textView
 id textView2
 id textView3
 id textView4
+id textView5
+id textView6
 id text_gallery
 id text_input_end_icon
 id text_input_error_icon
@@ -2352,6 +2360,7 @@ layout fragment_add_recipe
 layout fragment_gallery
 layout fragment_home
 layout fragment_recipe_details
+layout fragment_recipe_edit
 layout fragment_register
 layout fragment_slideshow
 layout material_chip_input_combo

@@ -24,6 +24,7 @@ public class RecipeDetailsFragment extends Fragment {
     TextView descEt;
     ImageView avatarImv;
     Button deleteBtn;
+    Button editBtn;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -88,6 +89,7 @@ public class RecipeDetailsFragment extends Fragment {
         descEt = view.findViewById(R.id.details_recipe_desc_ET);
 
         deleteBtn = view.findViewById(R.id.details_recipe_delete_btn);
+        editBtn = view.findViewById(R.id.details_recipe_edit_btn);
 
         //delete recipe by id and return to home list
         deleteBtn.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +101,13 @@ public class RecipeDetailsFragment extends Fragment {
                         Navigation.findNavController(nameTv).navigateUp();
                     }
                 });
+            }
+        });
+
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToRecipeEditFragment(recipeId));
             }
         });
 

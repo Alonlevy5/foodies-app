@@ -31,10 +31,22 @@
         <argument
             android:name="recipe_id"
             app:argType="string" />
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_recipeEditFragment"
+            app:destination="@id/recipeEditFragment" />
     </fragment>
     <fragment
         android:id="@+id/addRecipeFragment"
         android:name="com.comas.foodies.AddRecipeFragment"
         android:label="Add Recipe"
         tools:layout="@layout/fragment_addRecipe" /><action android:id="@+id/action_global_recipeFragment" app:destination="@id/home_addBtn"/>
+    <fragment
+        android:id="@+id/recipeEditFragment"
+        android:name="com.comas.foodies.RecipeEditFragment"
+        android:label="fragment_recipe_edit"
+        tools:layout="@layout/fragment_recipe_edit" >
+        <argument
+            android:name="recipe_id"
+            app:argType="string" />
+    </fragment>
 </navigation>

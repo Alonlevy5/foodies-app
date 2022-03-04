@@ -68,8 +68,20 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="337" />
+                            <option name="x" value="-281" />
+                            <option name="y" value="511" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="recipeEditFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-4" />
+                            <option name="y" value="513" />
                           </Point>
                         </option>
                       </LayoutPositions>
