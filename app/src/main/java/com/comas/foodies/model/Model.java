@@ -31,7 +31,7 @@ public class Model {
         modelFirebase.getAllRecipes(listener);
     }
 
-    //try
+
     public interface GetRecipesById {
         void onComplete(Recipe recipe);
     }
@@ -46,6 +46,14 @@ public class Model {
 
     public void addRecipe(Recipe recipe, AddRecipeListener listener) {
         modelFirebase.addRecipe(recipe, listener);
+    }
+
+    public interface DeleteRecipeById {
+        void onComplete();
+    }
+
+    public void deleteRecipeById(String recipeId, DeleteRecipeById listener) {
+        modelFirebase.deleteRecipeById(recipeId,listener);
     }
 
 }

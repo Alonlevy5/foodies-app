@@ -115,9 +115,13 @@ public class AddRecipeFragment extends Fragment {
 
         Recipe recipe = new Recipe(name, id, desc);
 
+        //add the recipe and then return to list page
+
         Model.instance.addRecipe(recipe, () -> {
            Navigation.findNavController(nameEt).navigateUp();
         });
+
+
 
     }
 

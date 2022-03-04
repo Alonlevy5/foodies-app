@@ -1938,8 +1938,10 @@ id design_menu_item_text
 id design_navigation_view
 id details_recipe_Id_ET
 id details_recipe_delete_btn
-id details_recipe_description_tv
+id details_recipe_desc_ET
+id details_recipe_desc_tv
 id details_recipe_edit_btn
+id details_recipe_id_tv
 id details_recipe_img
 id details_recipe_name_ET
 id details_recipe_name_tv
