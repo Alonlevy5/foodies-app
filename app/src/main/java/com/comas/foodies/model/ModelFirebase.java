@@ -29,7 +29,9 @@ public class ModelFirebase {
         db.setFirestoreSettings(settings);
     }
 
-    //TODO 24/02/22 need to add delete update and getById to fireBase
+    //TODO 4/3/22 need to add delete update from fireBase
+
+
     public void getAllRecipes(Model.GetAllRecipesListener listener) {
 
         db.collection(Recipe.collectionName)
