@@ -13,13 +13,25 @@
                       <LayoutPositions />
                     </value>
                   </entry>
-                  <entry key="nav_gallery">
+                  <entry key="addRecipeFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="12" />
                             <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="home_addBtn">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-219" />
+                            <option name="y" value="89" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -30,18 +42,18 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="410" />
+                            <option name="x" value="-503" />
+                            <option name="y" value="341" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="actionHomeToRecipeCreate">
+                            <entry key="action_recipeListRv_to_recipeAdd">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_home_to_recipeDetails">
+                            <entry key="action_recipeListRv_to_recipeDetails">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -51,49 +63,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="nav_slideshow">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="256" />
-                            <option name="y" value="12" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="recipeCreateFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="223" />
-                            <option name="y" value="731" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="recipeDetailsFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="361" />
-                            <option name="y" value="377" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="recipeFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="500" />
-                            <option name="y" value="12" />
+                            <option name="x" value="256" />
+                            <option name="y" value="337" />
                           </Point>
                         </option>
                       </LayoutPositions>

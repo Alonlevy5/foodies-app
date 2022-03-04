@@ -7,45 +7,34 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.comas.foodies.ui.home.HomeFragment"
+        android:name="com.comas.foodies.ui.home.RecipeListRvFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_home_to_recipeDetails"
+            android:id="@+id/action_recipeListRv_to_recipeDetails"
             app:destination="@id/recipeDetailsFragment" />
         <action
-            android:id="@+id/actionHomeToRecipeCreate"
-            app:destination="@id/recipeCreateFragment" />
+            android:id="@+id/action_recipeListRv_to_recipeAdd"
+            app:destination="@id/addRecipeFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.comas.foodies.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.comas.foodies.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
-        android:id="@+id/recipeFragment"
-        android:name="com.comas.foodies.ui.recipe.RecipeFragment"
+        android:id="@+id/home_addBtn"
+        android:name="com.comas.foodies.RecipeFragment"
         android:label="recipe_fragment"
-        tools:layout="@layout/recipe_fragment" />
+        tools:layout="@layout/fragment_recipe_details" />
     <fragment
         android:id="@+id/recipeDetailsFragment"
-        android:name="com.comas.foodies.ui.recipe.RecipeDetailsFragment"
+        android:name="com.comas.foodies.RecipeDetailsFragment"
         android:label="fragment_recipe_details"
-        tools:layout="@layout/fragment_recipe_create" >
+        tools:layout="@layout/fragment_addRecipe" >
         <argument
             android:name="recipe_id"
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/recipeCreateFragment"
-        android:name="com.comas.foodies.ui.recipe.RecipeCreateFragment"
-        android:label="fragment_recipe_create"
-        tools:layout="@layout/fragment_recipe_create" /><action android:id="@+id/action_global_recipeFragment" app:destination="@id/recipeFragment"/>
+        android:id="@+id/addRecipeFragment"
+        android:name="com.comas.foodies.AddRecipeFragment"
+        android:label="Add Recipe"
+        tools:layout="@layout/fragment_addRecipe" /><action android:id="@+id/action_global_recipeFragment" app:destination="@id/home_addBtn"/>
 </navigation>
