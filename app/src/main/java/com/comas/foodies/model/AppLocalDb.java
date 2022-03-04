@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase;
 
 import com.comas.foodies.MyApplication;
 
-@Database(entities = {Recipe.class}, version = 1)
+@Database(entities = {Recipe.class}, version = 2)
 abstract class AppLocalDbRepository extends RoomDatabase {
     public abstract RecipeDao recipeDao();
 }
