@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.FieldValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +15,14 @@ import java.util.Map;
 public class Recipe {
 
     final public static String collectionName = "recipes";
-    private String image;
+    String image;
     @PrimaryKey
     @NonNull
-    private String id;
-    private String name;
-    private String desc;
+    String id;
+    String name;
+    String desc;
+    Long updateDate = 0L;
+
 
     public Recipe() {
 
@@ -36,11 +39,14 @@ public class Recipe {
         this.desc = desc;
     }
 
-    public Recipe(String id, String name, String desc, String image) {
+
+    public Recipe(String id, String name, String desc, String image, Long updateDate) {
         this.id = id;
         this.name = name;
         this.desc = desc;
         this.image = image;
+        this.updateDate = updateDate;
+
     }
 
 
@@ -76,13 +82,22 @@ public class Recipe {
         this.image = image;
     }
 
+    public void setUpdateDate(Long updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public Long getUpdateDate() {
+        return updateDate;
+    }
+
     public Map<String, Object> toJson() {
 
         Map<String, Object> json = new HashMap<String, Object>();
-        
+
         json.put("id", id);
         json.put("name", name);
         json.put("desc", desc);
+        json.put("updateDate", FieldValue.serverTimestamp());
 
         return json;
     }
@@ -93,7 +108,14 @@ public class Recipe {
         String name = (String) json.get("name");
         String desc = (String) json.get("desc");
 
-        return new Recipe(id, name, desc, null);
+        Timestamp ts = (Timestamp) json.get("updateDate");
+        Long updateDate = null;
+        if (ts != null) {
+            updateDate = ts.getSeconds();
+        }
+
+        return new Recipe(id, name, desc, null, updateDate);
     }
+
 
 }

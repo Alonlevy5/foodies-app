@@ -1,11 +1,15 @@
 package com.comas.foodies.model;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import androidx.core.os.HandlerCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.comas.foodies.MyApplication;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -50,11 +54,39 @@ public class Model {
     public void refreshRecipeList() {
         recipeListLoadingState.setValue(RecipeListLoadingState.loading);
 
-        modelFirebase.getAllRecipes(new ModelFirebase.GetAllRecipesListener() {
+        // get last local update date
+        Long lastUpdateDate = MyApplication.getContext()
+                .getSharedPreferences("TAG", Context.MODE_PRIVATE)
+                .getLong("RecipesLastUpdateDate", 0);
+
+        modelFirebase.getAllRecipes(lastUpdateDate, new ModelFirebase.GetAllRecipesListener() {
             @Override
             public void onComplete(List<Recipe> list) {
-                recipeList.setValue(list);
-                recipeListLoadingState.setValue(RecipeListLoadingState.loaded);
+                // add all records to the local db
+                executor.execute(() -> {
+
+                    Long lud = 0L;
+                    Log.d("TAG", "FB returned: " + list.size());
+
+                    for (Recipe recipe : list) {
+                        AppLocalDb.db.recipeDao().insertAll(recipe);
+                        if (lud < recipe.getUpdateDate()) {
+                            lud = recipe.getUpdateDate();
+                        }
+                    }
+                    // update last local update date
+                    MyApplication.getContext()
+                            .getSharedPreferences("TAG", Context.MODE_PRIVATE)
+                            .edit()
+                            .putLong("RecipesLastUpdateDate", lud)
+                            .commit();
+
+
+                    //return all data to caller
+                    List<Recipe> recipes = AppLocalDb.db.recipeDao().getAll();
+                    recipeList.postValue(recipes);
+                    recipeListLoadingState.postValue(RecipeListLoadingState.loaded);
+                });
             }
         });
     }

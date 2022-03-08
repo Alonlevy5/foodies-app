@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
@@ -26,7 +27,8 @@ public class ModelFirebase {
 
 
     public ModelFirebase() {
-        // see the same list of recipes in two devices
+
+        // disables local cache
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setPersistenceEnabled(false)
                 .build();
@@ -38,9 +40,10 @@ public class ModelFirebase {
         void onComplete(List<Recipe> list);
     }
 
-    public void getAllRecipes(GetAllRecipesListener listener) {
+    public void getAllRecipes(Long lastUpdateDate, GetAllRecipesListener listener) {
 
         db.collection(Recipe.collectionName)
+                .whereGreaterThanOrEqualTo("updateDate", new Timestamp(lastUpdateDate, 0))
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -50,7 +53,6 @@ public class ModelFirebase {
                             for (QueryDocumentSnapshot doc : task.getResult()) {
                                 Recipe recipe = Recipe.create(doc.getData());
                                 if (recipe != null) {
-                                    //recipe.setId(doc.getId());
                                     Log.d("TAG", "id is " + recipe.getId());
                                     list.add(recipe);
                                 }

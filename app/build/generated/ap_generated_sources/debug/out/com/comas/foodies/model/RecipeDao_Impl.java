@@ -9,6 +9,7 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
+import java.lang.Long;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
@@ -29,7 +30,7 @@ public final class RecipeDao_Impl implements RecipeDao {
     this.__insertionAdapterOfRecipe = new EntityInsertionAdapter<Recipe>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Recipe` (`image`,`id`,`name`,`desc`) VALUES (?,?,?,?)";
+        return "INSERT OR REPLACE INTO `Recipe` (`image`,`id`,`name`,`desc`,`updateDate`) VALUES (?,?,?,?,?)";
       }
 
       @Override
@@ -53,6 +54,11 @@ public final class RecipeDao_Impl implements RecipeDao {
           stmt.bindNull(4);
         } else {
           stmt.bindString(4, value.getDesc());
+        }
+        if (value.getUpdateDate() == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindLong(5, value.getUpdateDate());
         }
       }
     };
@@ -108,6 +114,7 @@ public final class RecipeDao_Impl implements RecipeDao {
       final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
       final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
       final int _cursorIndexOfDesc = CursorUtil.getColumnIndexOrThrow(_cursor, "desc");
+      final int _cursorIndexOfUpdateDate = CursorUtil.getColumnIndexOrThrow(_cursor, "updateDate");
       final List<Recipe> _result = new ArrayList<Recipe>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Recipe _item;
@@ -140,6 +147,13 @@ public final class RecipeDao_Impl implements RecipeDao {
           _tmpDesc = _cursor.getString(_cursorIndexOfDesc);
         }
         _item.setDesc(_tmpDesc);
+        final Long _tmpUpdateDate;
+        if (_cursor.isNull(_cursorIndexOfUpdateDate)) {
+          _tmpUpdateDate = null;
+        } else {
+          _tmpUpdateDate = _cursor.getLong(_cursorIndexOfUpdateDate);
+        }
+        _item.setUpdateDate(_tmpUpdateDate);
         _result.add(_item);
       }
       return _result;

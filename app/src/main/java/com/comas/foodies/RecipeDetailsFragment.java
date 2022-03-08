@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -25,6 +26,7 @@ public class RecipeDetailsFragment extends Fragment {
     ImageView avatarImv;
     Button deleteBtn;
     Button editBtn;
+    ProgressBar progressBar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -75,12 +77,17 @@ public class RecipeDetailsFragment extends Fragment {
 
         String recipeId = RecipeDetailsFragmentArgs.fromBundle(getArguments()).getRecipeId();
 
+        progressBar = view.findViewById(R.id.details_recipe_progressBar);
+
+
         Model.instance.getRecipeById(recipeId, new Model.GetRecipesById() {
             @Override
             public void onComplete(Recipe recipe) {
+                progressBar.setVisibility(View.VISIBLE);
                 nameTv.setText(recipe.getName());
                 idTv.setText(recipe.getId());
                 descEt.setText(recipe.getDesc());
+                progressBar.setVisibility(View.GONE);
             }
         });
 
