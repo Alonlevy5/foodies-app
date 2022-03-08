@@ -34,7 +34,11 @@ public class ModelFirebase {
     }
 
 
-    public void getAllRecipes(Model.GetAllRecipesListener listener) {
+    public interface GetAllRecipesListener {
+        void onComplete(List<Recipe> list);
+    }
+
+    public void getAllRecipes(GetAllRecipesListener listener) {
 
         db.collection(Recipe.collectionName)
                 .get()

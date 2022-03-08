@@ -1,5 +1,6 @@
 package com.comas.foodies.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.comas.foodies.R;
 
@@ -29,23 +31,30 @@ import java.util.List;
 public class RecipeListRvFragment extends Fragment {
 
 
-    ProgressBar progressBar;
-    private List<Recipe> mRecipeList;
+
+    RecipeListRvViewModel viewModel;
     MyAdapter mAdapter;
+    SwipeRefreshLayout swipeRefresh;
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        viewModel = new ViewModelProvider(this).get(RecipeListRvViewModel.class);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-        progressBar = view.findViewById(R.id.Home_frag_progressBar);
-        progressBar.setVisibility(View.GONE);
+        swipeRefresh = view.findViewById(R.id.home_swiperefresh);
+        swipeRefresh.setOnRefreshListener(() -> Model.instance.refreshRecipeList());
+
 
         RecyclerView list = view.findViewById(R.id.fragment_home_Rv);
         list.setHasFixedSize(true);
-
         list.setLayoutManager(new LinearLayoutManager(getContext()));
-
         mAdapter = new MyAdapter();
         list.setAdapter(mAdapter);
 
@@ -53,15 +62,27 @@ public class RecipeListRvFragment extends Fragment {
         mAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                String recipeId = mRecipeList.get(position).getId();
+                String recipeId = viewModel.getData().getValue().get(position).getId();
                 Navigation.findNavController(v).navigate(RecipeListRvFragmentDirections.actionRecipeListRvToRecipeDetails(recipeId));
 
             }
         });
 
         setHasOptionsMenu(true);
-        refresh();
 
+        viewModel.getData().observe(getViewLifecycleOwner(), recipes -> refresh());
+
+        swipeRefresh.setRefreshing(Model.instance.getRecipeListLoadingState().getValue() == Model.RecipeListLoadingState.loading);
+
+        Model.instance.getRecipeListLoadingState().observe(getViewLifecycleOwner(), new Observer<Model.RecipeListLoadingState>() {
+            @Override
+            public void onChanged(Model.RecipeListLoadingState recipeListLoadingState) {
+                if(recipeListLoadingState == Model.RecipeListLoadingState.loading)
+                    swipeRefresh.setRefreshing(true);
+                else
+                    swipeRefresh.setRefreshing(false);
+            }
+        });
         // to Add a new Recipe
         FloatingActionButton fab = view.findViewById(R.id.home_addBtn);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -76,15 +97,9 @@ public class RecipeListRvFragment extends Fragment {
 
     // gets the recipeList from FireBase
     private void refresh() {
-        progressBar.setVisibility(View.VISIBLE);
-        Model.instance.getAllRecipes((list) -> {
-            mRecipeList = list;
+
             mAdapter.notifyDataSetChanged();
-            progressBar.setVisibility(View.GONE);
-
-
-        });
-
+            swipeRefresh.setRefreshing(false);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -131,7 +146,7 @@ public class RecipeListRvFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            Recipe recipe = mRecipeList.get(position);
+            Recipe recipe = viewModel.getData().getValue().get(position);
             holder.nameTv.setText(recipe.getName());
 
 
@@ -139,10 +154,10 @@ public class RecipeListRvFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            if (mRecipeList == null) {
+            if (viewModel.getData().getValue() == null) {
                 return 0;
             }
-            return mRecipeList.size();
+            return viewModel.getData().getValue().size();
         }
     }
 

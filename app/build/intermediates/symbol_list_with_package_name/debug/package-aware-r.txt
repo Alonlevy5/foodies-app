@@ -1787,7 +1787,6 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
-id Home_frag_progressBar
 id META
 id NO_DEBUG
 id SHIFT
@@ -2008,6 +2007,7 @@ id hideable
 id home
 id homeAsUp
 id home_addBtn
+id home_swiperefresh
 id honorRequest
 id icon
 id icon_group

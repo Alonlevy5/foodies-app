@@ -4,6 +4,8 @@ import android.os.Handler;
 import android.os.Looper;
 
 import androidx.core.os.HandlerCompat;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -19,18 +21,43 @@ public class Model {
 
     ModelFirebase modelFirebase = new ModelFirebase();
 
+    public enum RecipeListLoadingState {
+        loading,
+        loaded
+    }
+
+    MutableLiveData<RecipeListLoadingState> recipeListLoadingState = new MutableLiveData<>();
+
+    public LiveData<RecipeListLoadingState> getRecipeListLoadingState() {
+        return recipeListLoadingState;
+    }
+
+
     private Model() {
-
+        recipeListLoadingState.setValue(RecipeListLoadingState.loaded);
     }
 
-    public interface GetAllRecipesListener {
-        void onComplete(List<Recipe> list);
+    MutableLiveData<List<Recipe>> recipeList = new MutableLiveData<>();
+
+    public LiveData<List<Recipe>> getAll() {
+
+        if (recipeList.getValue() == null)
+            refreshRecipeList();
+
+        return recipeList;
     }
 
-    public void getAllRecipes(GetAllRecipesListener listener) {
-        modelFirebase.getAllRecipes(listener);
-    }
+    public void refreshRecipeList() {
+        recipeListLoadingState.setValue(RecipeListLoadingState.loading);
 
+        modelFirebase.getAllRecipes(new ModelFirebase.GetAllRecipesListener() {
+            @Override
+            public void onComplete(List<Recipe> list) {
+                recipeList.setValue(list);
+                recipeListLoadingState.setValue(RecipeListLoadingState.loaded);
+            }
+        });
+    }
 
     public interface GetRecipesById {
         void onComplete(Recipe recipe);
@@ -53,15 +80,15 @@ public class Model {
     }
 
     public void deleteRecipeById(String recipeId, DeleteRecipeById listener) {
-        modelFirebase.deleteRecipeById(recipeId,listener);
+        modelFirebase.deleteRecipeById(recipeId, listener);
     }
 
-    public interface UpdateRecipeById{
+    public interface UpdateRecipeById {
         void onComplete(Recipe recipe);
     }
 
-    public void updateRecipeById(String recipeID, String name, String desc, UpdateRecipeById listener){
-        modelFirebase.updateRecipeById(recipeID,name,desc,listener);
+    public void updateRecipeById(String recipeID, String name, String desc, UpdateRecipeById listener) {
+        modelFirebase.updateRecipeById(recipeID, name, desc, listener);
     }
 
 }
