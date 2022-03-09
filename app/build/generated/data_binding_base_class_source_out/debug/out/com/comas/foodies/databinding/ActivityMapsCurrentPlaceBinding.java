@@ -4,20 +4,28 @@ package com.comas.foodies.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.comas.foodies.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityMapsCurrentPlaceBinding implements ViewBinding {
   @NonNull
   private final RelativeLayout rootView;
 
-  private ActivityMapsCurrentPlaceBinding(@NonNull RelativeLayout rootView) {
+  @NonNull
+  public final Button locationSave;
+
+  private ActivityMapsCurrentPlaceBinding(@NonNull RelativeLayout rootView,
+      @NonNull Button locationSave) {
     this.rootView = rootView;
+    this.locationSave = locationSave;
   }
 
   @Override
@@ -43,10 +51,19 @@ public final class ActivityMapsCurrentPlaceBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMapsCurrentPlaceBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.location_save;
+      Button locationSave = ViewBindings.findChildViewById(rootView, id);
+      if (locationSave == null) {
+        break missingId;
+      }
 
-    return new ActivityMapsCurrentPlaceBinding((RelativeLayout) rootView);
+      return new ActivityMapsCurrentPlaceBinding((RelativeLayout) rootView, locationSave);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

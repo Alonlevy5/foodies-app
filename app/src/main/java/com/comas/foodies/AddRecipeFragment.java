@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
@@ -38,7 +39,7 @@ public class AddRecipeFragment extends Fragment {
     EditText nameEt;
     EditText idEt;
     EditText descEt;
-    EditText locationEt;
+    TextView locationEt;
     FloatingActionButton locationBtn;
     FusedLocationProviderClient fusedLocationProviderClient;
     Button saveBtn;

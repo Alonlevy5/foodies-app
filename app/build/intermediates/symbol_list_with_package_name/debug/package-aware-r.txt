@@ -2066,6 +2066,7 @@ id line3
 id linear
 id listMode
 id list_item
+id location_save
 id main_progressbar
 id maps
 id masked
