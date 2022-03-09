@@ -1,6 +1,7 @@
 package com.comas.foodies.model;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class Model {
     Handler mainThread = HandlerCompat.createAsync(Looper.getMainLooper());
 
     ModelFirebase modelFirebase = new ModelFirebase();
+
 
     public enum RecipeListLoadingState {
         loading,
@@ -104,7 +106,11 @@ public class Model {
     }
 
     public void addRecipe(Recipe recipe, AddRecipeListener listener) {
-        modelFirebase.addRecipe(recipe, listener);
+        modelFirebase.addRecipe(recipe, () -> {
+            refreshRecipeList();
+            listener.onComplete();
+        });
+
     }
 
     public interface DeleteRecipeById {
@@ -121,6 +127,17 @@ public class Model {
 
     public void updateRecipeById(String recipeID, String name, String desc, UpdateRecipeById listener) {
         modelFirebase.updateRecipeById(recipeID, name, desc, listener);
+    }
+
+
+    public interface saveImageListener {
+        void onComplete(String url);
+    }
+
+
+    // todo.....
+    public void saveImage(Bitmap imageBitmap, String imageName, saveImageListener listener) {
+        modelFirebase.saveImage(imageBitmap,imageName,listener);
     }
 
 }

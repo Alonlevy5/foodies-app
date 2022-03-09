@@ -1858,8 +1858,10 @@ id activity_chooser_view_content
 id add
 id addRecipeFragment
 id addRecipe_avatar_img
+id addRecipe_camera_imgBtn
 id addRecipe_cancel_btn
 id addRecipe_desc_et
+id addRecipe_gallery_imgBtn
 id addRecipe_id_et
 id addRecipe_name_et
 id addRecipe_save_btn
@@ -1967,6 +1969,7 @@ id easeOut
 id editTextTextEmailAddress_registerFragment
 id editTextTextPassword_registerFragment
 id editTextTextRePassword_registerFragment
+id edit_image_imgv
 id edit_query
 id edit_recipe_descET
 id edit_recipe_namET
@@ -2017,7 +2020,6 @@ id ignore
 id ignoreRequest
 id image
 id imageView
-id imageView2
 id include
 id info
 id invisible
@@ -2136,8 +2138,8 @@ id ratio
 id recipeDetailsFragment
 id recipeEditFragment
 id recipe_frag_edit_image
-id recipelist_item_image
-id recipelist_item_text
+id recipelistRow_item_image
+id recipelistRow_item_text
 id rectangles
 id repeatPassword_registerFragment_tv
 id resgisterBtn_registerFragment

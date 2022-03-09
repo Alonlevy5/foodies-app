@@ -30,30 +30,30 @@ public final class RecipeDao_Impl implements RecipeDao {
     this.__insertionAdapterOfRecipe = new EntityInsertionAdapter<Recipe>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Recipe` (`image`,`id`,`name`,`desc`,`updateDate`) VALUES (?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `Recipe` (`id`,`name`,`desc`,`imageUrl`,`updateDate`) VALUES (?,?,?,?,?)";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Recipe value) {
-        if (value.getImage() == null) {
+        if (value.getId() == null) {
           stmt.bindNull(1);
         } else {
-          stmt.bindString(1, value.getImage());
-        }
-        if (value.getId() == null) {
-          stmt.bindNull(2);
-        } else {
-          stmt.bindString(2, value.getId());
+          stmt.bindString(1, value.getId());
         }
         if (value.getName() == null) {
-          stmt.bindNull(3);
+          stmt.bindNull(2);
         } else {
-          stmt.bindString(3, value.getName());
+          stmt.bindString(2, value.getName());
         }
         if (value.getDesc() == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindString(3, value.getDesc());
+        }
+        if (value.getImageUrl() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getDesc());
+          stmt.bindString(4, value.getImageUrl());
         }
         if (value.getUpdateDate() == null) {
           stmt.bindNull(5);
@@ -110,22 +110,15 @@ public final class RecipeDao_Impl implements RecipeDao {
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
       final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
       final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
       final int _cursorIndexOfDesc = CursorUtil.getColumnIndexOrThrow(_cursor, "desc");
+      final int _cursorIndexOfImageUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "imageUrl");
       final int _cursorIndexOfUpdateDate = CursorUtil.getColumnIndexOrThrow(_cursor, "updateDate");
       final List<Recipe> _result = new ArrayList<Recipe>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Recipe _item;
         _item = new Recipe();
-        final String _tmpImage;
-        if (_cursor.isNull(_cursorIndexOfImage)) {
-          _tmpImage = null;
-        } else {
-          _tmpImage = _cursor.getString(_cursorIndexOfImage);
-        }
-        _item.setImage(_tmpImage);
         final String _tmpId;
         if (_cursor.isNull(_cursorIndexOfId)) {
           _tmpId = null;
@@ -147,6 +140,13 @@ public final class RecipeDao_Impl implements RecipeDao {
           _tmpDesc = _cursor.getString(_cursorIndexOfDesc);
         }
         _item.setDesc(_tmpDesc);
+        final String _tmpImageUrl;
+        if (_cursor.isNull(_cursorIndexOfImageUrl)) {
+          _tmpImageUrl = null;
+        } else {
+          _tmpImageUrl = _cursor.getString(_cursorIndexOfImageUrl);
+        }
+        _item.setImageUrl(_tmpImageUrl);
         final Long _tmpUpdateDate;
         if (_cursor.isNull(_cursorIndexOfUpdateDate)) {
           _tmpUpdateDate = null;

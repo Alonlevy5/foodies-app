@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -25,11 +22,9 @@ import com.comas.foodies.R;
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.List;
+import com.squareup.picasso.Picasso;
 
 public class RecipeListRvFragment extends Fragment {
-
 
 
     RecipeListRvViewModel viewModel;
@@ -77,7 +72,7 @@ public class RecipeListRvFragment extends Fragment {
         Model.instance.getRecipeListLoadingState().observe(getViewLifecycleOwner(), new Observer<Model.RecipeListLoadingState>() {
             @Override
             public void onChanged(Model.RecipeListLoadingState recipeListLoadingState) {
-                if(recipeListLoadingState == Model.RecipeListLoadingState.loading)
+                if (recipeListLoadingState == Model.RecipeListLoadingState.loading)
                     swipeRefresh.setRefreshing(true);
                 else
                     swipeRefresh.setRefreshing(false);
@@ -98,8 +93,8 @@ public class RecipeListRvFragment extends Fragment {
     // gets the recipeList from FireBase
     private void refresh() {
 
-            mAdapter.notifyDataSetChanged();
-            swipeRefresh.setRefreshing(false);
+        mAdapter.notifyDataSetChanged();
+        swipeRefresh.setRefreshing(false);
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -111,8 +106,8 @@ public class RecipeListRvFragment extends Fragment {
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
-            nameTv = itemView.findViewById(R.id.recipelist_item_text);
-            imgView = itemView.findViewById(R.id.recipelist_item_image);
+            nameTv = itemView.findViewById(R.id.recipelistRow_item_text);
+            imgView = itemView.findViewById(R.id.recipelistRow_item_image);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -121,6 +116,16 @@ public class RecipeListRvFragment extends Fragment {
                     listener.onItemClick(v, pos);
                 }
             });
+        }
+
+        public void bind(Recipe recipe){
+            nameTv.setText(recipe.getName());
+            imgView.setImageResource(R.drawable.ic_menu_gallery);
+            if (recipe.getImageUrl() != null) {
+                Picasso.get()
+                        .load(recipe.getImageUrl())
+                        .into(imgView);
+            }
         }
     }
 
@@ -147,7 +152,8 @@ public class RecipeListRvFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             Recipe recipe = viewModel.getData().getValue().get(position);
-            holder.nameTv.setText(recipe.getName());
+
+            holder.bind(recipe);
 
 
         }

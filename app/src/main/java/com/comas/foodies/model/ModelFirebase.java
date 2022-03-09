@@ -1,5 +1,7 @@
 package com.comas.foodies.model;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -15,7 +17,11 @@ import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -149,6 +155,37 @@ public class ModelFirebase {
                         Log.w("TAG", "Error deleting document", e);
                     }
                 });
+
+    }
+
+
+    /**
+     * storage implementation for handling files and photos
+     */
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+
+    public void saveImage(Bitmap imageBitmap, String imageName, Model.saveImageListener listener) {
+
+        // Create a storage reference from our app
+        StorageReference storageRef = storage.getReference();
+
+        // Create a reference to "mountains.jpg"
+        StorageReference imageRef = storageRef.child("/Recipe_imgs/" + imageName);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        UploadTask uploadTask = imageRef.putBytes(data);
+
+        uploadTask.addOnFailureListener(exception -> {
+            // Handle unsuccessful uploads
+            listener.onComplete(null);
+
+        }).addOnSuccessListener(taskSnapshot -> {
+            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+            imageRef.getDownloadUrl().addOnSuccessListener(uri -> listener.onComplete(uri.toString()));
+        });
 
     }
 
