@@ -17,9 +17,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RecipeFragment extends Fragment {
 
@@ -31,6 +33,8 @@ public class RecipeFragment extends Fragment {
     protected ImageButton mEditImageButton;
     protected EditText mRecipeNameEditText;
     protected EditText mRecipeDescEditText;
+    protected EditText mLocationEditText;
+    FloatingActionButton mLocationBtn;
     protected Button mEditButton;
     protected Button mDeleteButton;
     ProgressBar progressBar;
@@ -49,10 +53,10 @@ public class RecipeFragment extends Fragment {
         mEditImageButton = view.findViewById(R.id.recipe_frag_edit_image);
         mRecipeNameEditText = view.findViewById(R.id.details_recipe_name_ET);
         mRecipeDescEditText = view.findViewById(R.id.details_recipe_Id_ET);
-
         mEditButton = view.findViewById(R.id.details_recipe_edit_btn);
         mDeleteButton = view.findViewById(R.id.details_recipe_delete_btn);
-
+        mLocationEditText = view.findViewById(R.id.addRecipe_location);
+        mLocationBtn = view.findViewById(R.id.addRecipe_locationBtn);
         progressBar = view.findViewById(R.id.details_recipe_progressBar);
         progressBar.setVisibility(View.GONE);
 

@@ -1,5 +1,6 @@
 package com.comas.foodies;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,13 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -35,15 +38,21 @@ public class AddRecipeFragment extends Fragment {
     EditText nameEt;
     EditText idEt;
     EditText descEt;
+    EditText locationEt;
+    FloatingActionButton locationBtn;
+    FusedLocationProviderClient fusedLocationProviderClient;
     Button saveBtn;
     Button cancelBtn;
     ProgressBar progressBar;
+    int REQUEST_CODE = 111;
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -89,19 +98,28 @@ public class AddRecipeFragment extends Fragment {
         nameEt = view.findViewById(R.id.addRecipe_name_et);
         descEt = view.findViewById(R.id.addRecipe_desc_et);
         idEt = view.findViewById(R.id.addRecipe_id_et);
-
+        locationEt = view.findViewById(R.id.addRecipe_location);
         //buttons handling
         saveBtn = view.findViewById(R.id.addRecipe_save_btn);
         cancelBtn = view.findViewById(R.id.addRecipe_cancel_btn);
+        locationBtn = view.findViewById(R.id.addRecipe_locationBtn);
         progressBar = view.findViewById(R.id.main_progressbar);
         progressBar.setVisibility(View.GONE);
-
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
         saveBtn.setOnClickListener(v -> save());
-
         cancelBtn.setOnClickListener(v -> Navigation.findNavController(v).navigateUp());
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MapsActivity.class);
+                intent.putExtra("some" , "some-data");
+                startActivity(intent);
+            }
+        });
 
         return view;
     }
+
 
     private void save() {
 

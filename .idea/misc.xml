@@ -42,6 +42,15 @@
         <entry key="..\:/Users/yarde/Downloads/foodies-app/app/src/main/res/menu/activity_main_drawer.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/yarde/Downloads/foodies-app/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/Users/yarde/Downloads/foodies-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2625" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/activity_maps_current_place.xml" value="0.2" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/content_main.xml" value="0.25" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/fragment_add_recipe.xml" value="0.24635416666666668" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/fragment_recipe_details.xml" value="0.25" />
+        <entry key="..\:/foodies-app/app/src/main/res/layout/fragment_recipe_edit.xml" value="0.25" />
       </map>
     </option>
   </component>
