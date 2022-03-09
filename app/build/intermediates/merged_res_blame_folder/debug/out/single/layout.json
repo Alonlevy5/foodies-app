@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recipelist_item.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\recipelist_item.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_register.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_register.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_recipe_edit.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_recipe_edit.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_slideshow.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_slideshow.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_recipe_details.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_recipe_details.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_maps_current_place.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\activity_maps_current_place.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_add_recipe.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_add_recipe.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_main.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\app_bar_main.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_gallery.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\fragment_gallery.xml"
+    },
+    {
+        "merged": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header_main.xml",
+        "source": "C:\\foodies-app\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    }
+]
