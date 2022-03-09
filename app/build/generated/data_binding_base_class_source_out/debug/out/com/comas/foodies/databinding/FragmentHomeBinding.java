@@ -4,6 +4,7 @@ package com.comas.foodies.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,16 +26,20 @@ public final class FragmentHomeBinding implements ViewBinding {
   public final ProgressBar HomeFragProgressBar;
 
   @NonNull
+  public final Button button2;
+
+  @NonNull
   public final RecyclerView fragmentHomeRv;
 
   @NonNull
   public final FloatingActionButton homeAddBtn;
 
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ProgressBar HomeFragProgressBar, @NonNull RecyclerView fragmentHomeRv,
-      @NonNull FloatingActionButton homeAddBtn) {
+      @NonNull ProgressBar HomeFragProgressBar, @NonNull Button button2,
+      @NonNull RecyclerView fragmentHomeRv, @NonNull FloatingActionButton homeAddBtn) {
     this.rootView = rootView;
     this.HomeFragProgressBar = HomeFragProgressBar;
+    this.button2 = button2;
     this.fragmentHomeRv = fragmentHomeRv;
     this.homeAddBtn = homeAddBtn;
   }
@@ -72,6 +77,12 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.button2;
+      Button button2 = ViewBindings.findChildViewById(rootView, id);
+      if (button2 == null) {
+        break missingId;
+      }
+
       id = R.id.fragment_home_Rv;
       RecyclerView fragmentHomeRv = ViewBindings.findChildViewById(rootView, id);
       if (fragmentHomeRv == null) {
@@ -84,7 +95,7 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, HomeFragProgressBar,
+      return new FragmentHomeBinding((ConstraintLayout) rootView, HomeFragProgressBar, button2,
           fragmentHomeRv, homeAddBtn);
     }
     String missingId = rootView.getResources().getResourceName(id);

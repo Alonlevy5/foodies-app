@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "C:\\Users\\moshi\\foodies-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dansa\\.gradle\\caches\\transforms-3\\2a5f3978b8cefe94768486f91f1ec83a\\transformed\\material-1.3.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\moshi\\.gradle\\caches\\transforms-3\\2a5f3978b8cefe94768486f91f1ec83a\\transformed\\material-1.3.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

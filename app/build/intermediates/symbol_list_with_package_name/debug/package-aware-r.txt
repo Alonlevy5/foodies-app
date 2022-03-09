@@ -1811,6 +1811,7 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id Email
 id FUNCTION
 id Home_frag_progressBar
 id META
@@ -1917,6 +1918,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id button2
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1948,6 +1950,7 @@ id contiguous
 id coordinator
 id cos
 id counterclockwise
+id createText
 id custom
 id customPanel
 id cut
@@ -2021,6 +2024,7 @@ id floating
 id forever
 id fragment_container_view_tag
 id fragment_home_Rv
+id fullName
 id ghost_view
 id ghost_view_holder
 id gone
@@ -2066,6 +2070,7 @@ id line3
 id linear
 id listMode
 id list_item
+id loginBtn
 id main_progressbar
 id maps
 id masked
@@ -2149,15 +2154,19 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password
 id password_registerFragment_tv
 id password_toggle
 id path
 id pathRelative
 id peekHeight
 id percent
+id phone
 id pin
 id position
 id postLayout
+id progressBar
+id progressBar2
 id progress_circular
 id progress_horizontal
 id radio
@@ -2168,6 +2177,7 @@ id recipe_frag_edit_image
 id recipelist_item_image
 id recipelist_item_text
 id rectangles
+id registerBtn
 id repeatPassword_registerFragment_tv
 id resgisterBtn_registerFragment
 id reverseSawtooth
@@ -2261,6 +2271,8 @@ id textView3
 id textView4
 id textView5
 id textView6
+id textView7
+id textView8
 id text_gallery
 id text_input_end_icon
 id text_input_error_icon
@@ -2366,8 +2378,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_login
 layout activity_main
 layout activity_maps_current_place
+layout activity_register
 layout app_bar_main
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
