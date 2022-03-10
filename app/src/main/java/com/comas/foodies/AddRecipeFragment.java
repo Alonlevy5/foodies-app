@@ -193,15 +193,9 @@ public class AddRecipeFragment extends Fragment {
                 });
             });
         } else {
-            Model.instance.addRecipe(recipe, () -> {
-                Navigation.findNavController(nameEt).navigateUp();
 
-
-                Model.instance.addRecipe(recipe, () -> {
-                    Navigation.findNavController(nameEt).navigateUp();
-                });
-            });
+            Model.instance.addRecipe(recipe, () -> Navigation.findNavController(nameEt).navigateUp());
         }
     }
-
 }
+

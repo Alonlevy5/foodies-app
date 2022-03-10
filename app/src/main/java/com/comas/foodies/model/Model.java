@@ -135,7 +135,7 @@ public class Model {
     }
 
 
-    // todo.....
+
     public void saveImage(Bitmap imageBitmap, String imageName, saveImageListener listener) {
         modelFirebase.saveImage(imageBitmap,imageName,listener);
     }

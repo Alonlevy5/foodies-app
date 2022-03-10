@@ -22,7 +22,7 @@ public class Recipe {
     String desc;
     String imageUrl;
     Long updateDate = 0L;
-
+//    Boolean isDeleted = false;
 
     public Recipe() {
 

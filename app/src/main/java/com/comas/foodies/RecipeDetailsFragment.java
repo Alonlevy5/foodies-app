@@ -111,24 +111,9 @@ public class RecipeDetailsFragment extends Fragment {
         editBtn = view.findViewById(R.id.details_recipe_edit_btn);
 
         //delete recipe by id and return to home list
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Model.instance.deleteRecipeById(recipeId, new Model.DeleteRecipeById() {
-                    @Override
-                    public void onComplete() {
-                        Navigation.findNavController(nameTv).navigateUp();
-                    }
-                });
-            }
-        });
+        deleteBtn.setOnClickListener(v -> Model.instance.deleteRecipeById(recipeId, () -> Navigation.findNavController(nameTv).navigateUp()));
 
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToRecipeEditFragment(recipeId));
-            }
-        });
+        editBtn.setOnClickListener(v -> Navigation.findNavController(v).navigate(RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToRecipeEditFragment(recipeId)));
 
 //        Button backBtn = view.findViewById(R.id.deta);
 //        backBtn.setOnClickListener((v) -> {

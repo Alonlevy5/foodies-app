@@ -143,18 +143,8 @@ public class ModelFirebase {
         db.collection(Recipe.collectionName)
                 .document(recipeId)
                 .delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        listener.onComplete();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("TAG", "Error deleting document", e);
-                    }
-                });
+                .addOnSuccessListener(unused -> listener.onComplete())
+                .addOnFailureListener(e -> Log.w("TAG", "Error deleting document", e));
 
     }
 
