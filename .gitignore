@@ -8,7 +8,7 @@
 
 # Java class files
 *.class
-                            
+
 # generated files
 bin/
 gen/
@@ -34,4 +34,10 @@ output.json
 
 #NDK
 obj/
+
 .externalNativeBuild
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/build
+/captures
