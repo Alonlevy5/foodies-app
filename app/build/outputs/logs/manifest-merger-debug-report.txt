@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [androidx.databinding:viewbinding:7.0.3] C:\Users\Ruth\.gradle\caches\transforms-3\b2cac65a31ecb5485bf593a2870de6b2\transformed\jetified-viewbinding-7.0.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Ruth\.gradle\caches\transforms-3\3ecd7b6816038322e3c74b6d0fd850ae\transformed\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.3.3] C:\Users\Ruth\.gradle\caches\transforms-3\ef0f879a859613453e31f159c646ef77\transformed\navigation-ui-2.3.3\AndroidManifest.xml:17:1-24:12
@@ -90,25 +90,25 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ruth\.gradle\cac
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Ruth\.gradle\caches\transforms-3\e112beacf4d4b4d71c40a631666d9259\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Ruth\.gradle\caches\transforms-3\66706612b5ee905eef70756638b3f115\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\Ruth\.gradle\caches\transforms-3\a0a554fbeb00cedd3628e06134ec0d64\transformed\jetified-grpc-android-1.41.0\AndroidManifest.xml:2:1-13:12
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
 	package
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:3:5-32
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:3:5-32
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:1-57:12
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:10:5-67
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:10:5-67
 MERGED from [com.google.firebase:firebase-database:20.0.3] C:\Users\Ruth\.gradle\caches\transforms-3\caa963d0dcf133a2a40c877bad2ea03d\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-database:20.0.3] C:\Users\Ruth\.gradle\caches\transforms-3\caa963d0dcf133a2a40c877bad2ea03d\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] C:\Users\Ruth\.gradle\caches\transforms-3\4348a7a78c3fc8e34a2fb982a257e5dc\transformed\jetified-play-services-maps-18.0.2\AndroidManifest.xml:24:5-67
@@ -130,17 +130,17 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:20.0.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.2] C:\Users\Ruth\.gradle\caches\transforms-3\281f244b9c404dba24bccad1eb7d74af\transformed\jetified-play-services-measurement-sdk-api-20.0.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.0.2] C:\Users\Ruth\.gradle\caches\transforms-3\281f244b9c404dba24bccad1eb7d74af\transformed\jetified-play-services-measurement-sdk-api-20.0.2\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:10:22-64
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:10:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:11:5-81
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:11:22-78
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:12:5-79
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:12:22-76
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:12:22-76
 application
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:17:5-55:19
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:17:5-55:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Ruth\.gradle\caches\transforms-3\2a5f3978b8cefe94768486f91f1ec83a\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Ruth\.gradle\caches\transforms-3\2a5f3978b8cefe94768486f91f1ec83a\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Ruth\.gradle\caches\transforms-3\58edec9ce83e8c5e422f05a99997d103\transformed\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -204,57 +204,57 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ru
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] C:\Users\Ruth\.gradle\caches\transforms-3\b0e0c08d3d5b3403e6f0c88a8a2845c9\transformed\core-1.3.1\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:22:9-54
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:22:9-54
 	android:icon
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:20:9-43
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:24:9-45
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:24:9-45
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:18:9-38
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:18:9-38
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:34:9-36:55
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:34:9-36:55
 	android:value
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:36:13-52
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:36:13-52
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:35:13-58
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:35:13-58
 activity#com.comas.foodies.MapsActivity
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:38:9-41:72
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:38:9-41:72
 	android:label
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:41:13-70
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:41:13-70
 	android:exported
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:40:13-36
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:40:13-36
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:39:13-41
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:39:13-41
 activity#com.comas.foodies.MainActivity
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:43:9-54:20
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:43:9-54:20
 	android:label
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:46:13-45
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:46:13-45
 	android:exported
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:45:13-36
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:45:13-36
 	android:theme
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:47:13-61
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:47:13-61
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:44:13-41
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:44:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:48:13-52:29
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:48:13-52:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:49:17-69
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:49:17-69
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:49:25-66
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:49:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:51:17-77
+ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml:51:27-74
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml:51:27-74
 uses-sdk
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:7.0.3] C:\Users\Ruth\.gradle\caches\transforms-3\b2cac65a31ecb5485bf593a2870de6b2\transformed\jetified-viewbinding-7.0.3\AndroidManifest.xml:20:5-44
 MERGED from [androidx.databinding:viewbinding:7.0.3] C:\Users\Ruth\.gradle\caches\transforms-3\b2cac65a31ecb5485bf593a2870de6b2\transformed\jetified-viewbinding-7.0.3\AndroidManifest.xml:20:5-44
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Ruth\.gradle\caches\transforms-3\3ecd7b6816038322e3c74b6d0fd850ae\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
@@ -427,16 +427,16 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Rut
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\Ruth\.gradle\caches\transforms-3\66706612b5ee905eef70756638b3f115\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\Ruth\.gradle\caches\transforms-3\a0a554fbeb00cedd3628e06134ec0d64\transformed\jetified-grpc-android-1.41.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.41.0] C:\Users\Ruth\.gradle\caches\transforms-3\a0a554fbeb00cedd3628e06134ec0d64\transformed\jetified-grpc-android-1.41.0\AndroidManifest.xml:7:5-9:41
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-4\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ruth\Desktop\Computer Science\Collman\year3\Android Java\foodies-app-5\app\src\main\AndroidManifest.xml
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.4.1] C:\Users\Ruth\.gradle\caches\transforms-3\d7dfbf8674b09a7f4f7c322890002234\transformed\room-runtime-2.4.1\AndroidManifest.xml:25:9-28:40
 	android:exported

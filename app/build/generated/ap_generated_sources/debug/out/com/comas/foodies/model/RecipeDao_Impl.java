@@ -9,6 +9,7 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Class;
+import java.lang.Integer;
 import java.lang.Long;
 import java.lang.Override;
 import java.lang.String;
@@ -30,7 +31,7 @@ public final class RecipeDao_Impl implements RecipeDao {
     this.__insertionAdapterOfRecipe = new EntityInsertionAdapter<Recipe>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Recipe` (`id`,`name`,`desc`,`imageUrl`,`updateDate`) VALUES (?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `Recipe` (`id`,`name`,`desc`,`imageUrl`,`updateDate`,`isDeleted`) VALUES (?,?,?,?,?,?)";
       }
 
       @Override
@@ -59,6 +60,12 @@ public final class RecipeDao_Impl implements RecipeDao {
           stmt.bindNull(5);
         } else {
           stmt.bindLong(5, value.getUpdateDate());
+        }
+        final Integer _tmp = value.isDeleted == null ? null : (value.isDeleted ? 1 : 0);
+        if (_tmp == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindLong(6, _tmp);
         }
       }
     };
@@ -115,6 +122,7 @@ public final class RecipeDao_Impl implements RecipeDao {
       final int _cursorIndexOfDesc = CursorUtil.getColumnIndexOrThrow(_cursor, "desc");
       final int _cursorIndexOfImageUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "imageUrl");
       final int _cursorIndexOfUpdateDate = CursorUtil.getColumnIndexOrThrow(_cursor, "updateDate");
+      final int _cursorIndexOfIsDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "isDeleted");
       final List<Recipe> _result = new ArrayList<Recipe>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Recipe _item;
@@ -154,6 +162,13 @@ public final class RecipeDao_Impl implements RecipeDao {
           _tmpUpdateDate = _cursor.getLong(_cursorIndexOfUpdateDate);
         }
         _item.setUpdateDate(_tmpUpdateDate);
+        final Integer _tmp;
+        if (_cursor.isNull(_cursorIndexOfIsDeleted)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(_cursorIndexOfIsDeleted);
+        }
+        _item.isDeleted = _tmp == null ? null : _tmp != 0;
         _result.add(_item);
       }
       return _result;

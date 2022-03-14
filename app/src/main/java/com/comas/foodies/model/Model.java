@@ -71,9 +71,16 @@ public class Model {
                     Log.d("TAG", "FB returned: " + list.size());
 
                     for (Recipe recipe : list) {
-                        AppLocalDb.db.recipeDao().insertAll(recipe);
-                        if (lud < recipe.getUpdateDate()) {
-                            lud = recipe.getUpdateDate();
+
+                        if (recipe.isDeleted)
+                            AppLocalDb.db.recipeDao().delete(recipe);
+
+                        else {
+                            AppLocalDb.db.recipeDao().insertAll(recipe);
+
+                            if (lud < recipe.getUpdateDate()) {
+                                lud = recipe.getUpdateDate();
+                            }
                         }
                     }
                     // update last local update date
@@ -113,12 +120,15 @@ public class Model {
 
     }
 
-    public interface DeleteRecipeById {
+    public interface DeleteRecipeListener {
         void onComplete();
     }
 
-    public void deleteRecipeById(String recipeId, DeleteRecipeById listener) {
-        modelFirebase.deleteRecipeById(recipeId, listener);
+    public void deleteRecipeById(String recipeId, DeleteRecipeListener listener) {
+        modelFirebase.deleteRecipeById(recipeId, () -> {
+            refreshRecipeList();
+            listener.onComplete();
+        });
     }
 
     public interface UpdateRecipeById {
@@ -135,9 +145,8 @@ public class Model {
     }
 
 
-
     public void saveImage(Bitmap imageBitmap, String imageName, saveImageListener listener) {
-        modelFirebase.saveImage(imageBitmap,imageName,listener);
+        modelFirebase.saveImage(imageBitmap, imageName, listener);
     }
 
 }

@@ -22,7 +22,7 @@ public class Recipe {
     String desc;
     String imageUrl;
     Long updateDate = 0L;
-//    Boolean isDeleted = false;
+    Boolean isDeleted = false;
 
     public Recipe() {
 
@@ -47,6 +47,15 @@ public class Recipe {
         this.imageUrl = imageUrl;
         this.updateDate = updateDate;
 
+    }
+
+    public Recipe(@NonNull String id, String name, String desc, String imageUrl, Long updateDate, Boolean isDeleted) {
+        this.id = id;
+        this.name = name;
+        this.desc = desc;
+        this.imageUrl = imageUrl;
+        this.updateDate = updateDate;
+        this.isDeleted = isDeleted;
     }
 
 
@@ -99,6 +108,7 @@ public class Recipe {
         json.put("desc", desc);
         json.put("updateDate", FieldValue.serverTimestamp());
         json.put("imageUrl", imageUrl);
+        json.put("isDeleted", isDeleted);
 
         return json;
     }
@@ -110,6 +120,7 @@ public class Recipe {
         String name = (String) json.get("name");
         String desc = (String) json.get("desc");
         String imageUrl = (String) json.get("imageUrl");
+        Boolean isDeleted = (Boolean) json.get("isDeleted");
 
         Timestamp ts = (Timestamp) json.get("updateDate");
         Long updateDate = null;
@@ -118,7 +129,7 @@ public class Recipe {
         }
 
 
-        return new Recipe(id, name, desc, imageUrl, updateDate);
+        return new Recipe(id, name, desc, imageUrl, updateDate,isDeleted);
     }
 
 

@@ -34,12 +34,12 @@ public final class AppLocalDbRepository_Impl extends AppLocalDbRepository {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(6) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(12) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Recipe` (`id` TEXT NOT NULL, `name` TEXT, `desc` TEXT, `imageUrl` TEXT, `updateDate` INTEGER, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Recipe` (`id` TEXT NOT NULL, `name` TEXT, `desc` TEXT, `imageUrl` TEXT, `updateDate` INTEGER, `isDeleted` INTEGER, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a97800a3b8f0a2a8f6a2336a75be3de6')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f8e39124a67969273a3f828bd10c6dd7')");
       }
 
       @Override
@@ -83,12 +83,13 @@ public final class AppLocalDbRepository_Impl extends AppLocalDbRepository {
 
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsRecipe = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsRecipe = new HashMap<String, TableInfo.Column>(6);
         _columnsRecipe.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsRecipe.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsRecipe.put("desc", new TableInfo.Column("desc", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsRecipe.put("imageUrl", new TableInfo.Column("imageUrl", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsRecipe.put("updateDate", new TableInfo.Column("updateDate", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsRecipe.put("isDeleted", new TableInfo.Column("isDeleted", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysRecipe = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesRecipe = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoRecipe = new TableInfo("Recipe", _columnsRecipe, _foreignKeysRecipe, _indicesRecipe);
@@ -100,7 +101,7 @@ public final class AppLocalDbRepository_Impl extends AppLocalDbRepository {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "a97800a3b8f0a2a8f6a2336a75be3de6", "72dfce89b75e1fcbc2e255111e85e4ca");
+    }, "f8e39124a67969273a3f828bd10c6dd7", "6403c4de16f5929a4ddf1d950e719e1d");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

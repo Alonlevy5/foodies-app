@@ -1,27 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Ruth\\Desktop\\Computer Science\\Collman\\year3\\Android Java\\foodies-app-4\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\Ruth\\Desktop\\Computer Science\\Collman\\year3\\Android Java\\foodies-app-5\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
-                {
-                    "source": "C:\\Users\\Ruth\\Desktop\\Computer Science\\Collman\\year3\\Android Java\\foodies-app-4\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "830"
-                    },
-                    "to": {
-                        "startLines": "9",
-                        "startColumns": "4",
-                        "startOffsets": "732",
-                        "endLines": "21",
-                        "endColumns": "12",
-                        "endOffsets": "1446"
-                    }
-                },
                 {
                     "source": "C:\\Users\\Ruth\\.gradle\\caches\\transforms-3\\2a5f3978b8cefe94768486f91f1ec83a\\transformed\\material-1.3.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
@@ -37,6 +18,25 @@
                         "startOffsets": "1451,1539,1663,1765,1867,1983,2085,2199,2327,2443,2565,2701,2821,2955,3075,3187,3402,3540,3664,3794,3916,4054,4170",
                         "endColumns": "87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,137,123,129,121,137,115,119",
                         "endOffsets": "1534,1658,1760,1862,1978,2080,2194,2322,2438,2560,2696,2816,2950,3070,3182,3308,3535,3659,3789,3911,4049,4165,4285"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Ruth\\Desktop\\Computer Science\\Collman\\year3\\Android Java\\foodies-app-5\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "830"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "732",
+                        "endLines": "21",
+                        "endColumns": "12",
+                        "endOffsets": "1446"
                     }
                 },
                 {
