@@ -154,6 +154,10 @@
         </service>
 
         <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.comas.foodies.com.squareup.picasso"
+            android:exported="false" />
+        <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="com.comas.foodies.firebaseinitprovider"
             android:directBootAware="true"

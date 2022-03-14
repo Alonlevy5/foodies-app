@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.google.firebase.Timestamp;
-import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.FieldValue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,12 +14,15 @@ import java.util.Map;
 public class Recipe {
 
     final public static String collectionName = "recipes";
-    private String image;
+
     @PrimaryKey
     @NonNull
-    private String id;
-    private String name;
-    private String desc;
+    String id;
+    String name;
+    String desc;
+    String imageUrl;
+    Long updateDate = 0L;
+//    Boolean isDeleted = false;
 
     public Recipe() {
 
@@ -36,16 +39,19 @@ public class Recipe {
         this.desc = desc;
     }
 
-    public Recipe(String id, String name, String desc, String image) {
+
+    public Recipe(String id, String name, String desc, String imageUrl, Long updateDate) {
         this.id = id;
         this.name = name;
         this.desc = desc;
-        this.image = image;
+        this.imageUrl = imageUrl;
+        this.updateDate = updateDate;
+
     }
 
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
@@ -53,7 +59,7 @@ public class Recipe {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -61,39 +67,59 @@ public class Recipe {
     }
 
     public String getDesc() {
-        return desc;
+        return this.desc;
     }
 
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageUrl() {
+        return this.imageUrl;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageUrl(String url) {
+        this.imageUrl = url;
+    }
+
+    public void setUpdateDate(Long updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public Long getUpdateDate() {
+        return updateDate;
     }
 
     public Map<String, Object> toJson() {
 
         Map<String, Object> json = new HashMap<String, Object>();
-        
+
         json.put("id", id);
         json.put("name", name);
         json.put("desc", desc);
+        json.put("updateDate", FieldValue.serverTimestamp());
+        json.put("imageUrl", imageUrl);
 
         return json;
     }
 
+    //factory pattern
     public static Recipe create(Map<String, Object> json) {
 
         String id = (String) json.get("id");
         String name = (String) json.get("name");
         String desc = (String) json.get("desc");
+        String imageUrl = (String) json.get("imageUrl");
 
-        return new Recipe(id, name, desc, null);
+        Timestamp ts = (Timestamp) json.get("updateDate");
+        Long updateDate = null;
+        if (ts != null) {
+            updateDate = ts.getSeconds();
+        }
+
+
+        return new Recipe(id, name, desc, imageUrl, updateDate);
     }
+
 
 }

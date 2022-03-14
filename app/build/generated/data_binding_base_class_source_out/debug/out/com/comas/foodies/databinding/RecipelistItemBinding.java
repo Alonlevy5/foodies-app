@@ -21,16 +21,16 @@ public final class RecipelistItemBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView recipelistItemImage;
+  public final ImageView recipelistRowItemImage;
 
   @NonNull
-  public final TextView recipelistItemText;
+  public final TextView recipelistRowItemText;
 
   private RecipelistItemBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView recipelistItemImage, @NonNull TextView recipelistItemText) {
+      @NonNull ImageView recipelistRowItemImage, @NonNull TextView recipelistRowItemText) {
     this.rootView = rootView;
-    this.recipelistItemImage = recipelistItemImage;
-    this.recipelistItemText = recipelistItemText;
+    this.recipelistRowItemImage = recipelistRowItemImage;
+    this.recipelistRowItemText = recipelistRowItemText;
   }
 
   @Override
@@ -60,20 +60,20 @@ public final class RecipelistItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.recipelist_item_image;
-      ImageView recipelistItemImage = ViewBindings.findChildViewById(rootView, id);
-      if (recipelistItemImage == null) {
+      id = R.id.recipelistRow_item_image;
+      ImageView recipelistRowItemImage = ViewBindings.findChildViewById(rootView, id);
+      if (recipelistRowItemImage == null) {
         break missingId;
       }
 
-      id = R.id.recipelist_item_text;
-      TextView recipelistItemText = ViewBindings.findChildViewById(rootView, id);
-      if (recipelistItemText == null) {
+      id = R.id.recipelistRow_item_text;
+      TextView recipelistRowItemText = ViewBindings.findChildViewById(rootView, id);
+      if (recipelistRowItemText == null) {
         break missingId;
       }
 
-      return new RecipelistItemBinding((ConstraintLayout) rootView, recipelistItemImage,
-          recipelistItemText);
+      return new RecipelistItemBinding((ConstraintLayout) rootView, recipelistRowItemImage,
+          recipelistRowItemText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

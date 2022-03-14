@@ -1,5 +1,7 @@
 package com.comas.foodies.model;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -8,13 +10,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,7 +33,8 @@ public class ModelFirebase {
 
 
     public ModelFirebase() {
-        // see the same list of recipes in two devices
+
+        // disables local cache
         FirebaseFirestoreSettings settings = new FirebaseFirestoreSettings.Builder()
                 .setPersistenceEnabled(false)
                 .build();
@@ -34,9 +42,14 @@ public class ModelFirebase {
     }
 
 
-    public void getAllRecipes(Model.GetAllRecipesListener listener) {
+    public interface GetAllRecipesListener {
+        void onComplete(List<Recipe> list);
+    }
+
+    public void getAllRecipes(Long lastUpdateDate, GetAllRecipesListener listener) {
 
         db.collection(Recipe.collectionName)
+                .whereGreaterThanOrEqualTo("updateDate", new Timestamp(lastUpdateDate, 0))
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -46,7 +59,6 @@ public class ModelFirebase {
                             for (QueryDocumentSnapshot doc : task.getResult()) {
                                 Recipe recipe = Recipe.create(doc.getData());
                                 if (recipe != null) {
-                                    //recipe.setId(doc.getId());
                                     Log.d("TAG", "id is " + recipe.getId());
                                     list.add(recipe);
                                 }
@@ -131,18 +143,39 @@ public class ModelFirebase {
         db.collection(Recipe.collectionName)
                 .document(recipeId)
                 .delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        listener.onComplete();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("TAG", "Error deleting document", e);
-                    }
-                });
+                .addOnSuccessListener(unused -> listener.onComplete())
+                .addOnFailureListener(e -> Log.w("TAG", "Error deleting document", e));
+
+    }
+
+
+    /**
+     * storage implementation for handling files and photos
+     */
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+
+    public void saveImage(Bitmap imageBitmap, String imageName, Model.saveImageListener listener) {
+
+        // Create a storage reference from our app
+        StorageReference storageRef = storage.getReference();
+
+        // Create a reference to "mountains.jpg"
+        StorageReference imageRef = storageRef.child("/Recipe_imgs/" + imageName);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+
+        UploadTask uploadTask = imageRef.putBytes(data);
+
+        uploadTask.addOnFailureListener(exception -> {
+            // Handle unsuccessful uploads
+            listener.onComplete(null);
+
+        }).addOnSuccessListener(taskSnapshot -> {
+            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+            imageRef.getDownloadUrl().addOnSuccessListener(uri -> listener.onComplete(uri.toString()));
+        });
 
     }
 

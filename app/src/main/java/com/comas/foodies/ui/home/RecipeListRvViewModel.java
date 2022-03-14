@@ -4,16 +4,24 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.comas.foodies.model.Model;
+import com.comas.foodies.model.Recipe;
+
+import java.util.List;
+
 public class RecipeListRvViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+
+    LiveData<List<Recipe>> data;
+
 
     public RecipeListRvViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        this.data = Model.instance.getAll();
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<Recipe>> getData() {
+        return data;
     }
+
+
 }

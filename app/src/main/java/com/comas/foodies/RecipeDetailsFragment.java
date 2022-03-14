@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import androidx.navigation.Navigation;
 
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,7 +28,6 @@ public class RecipeDetailsFragment extends Fragment {
     Button deleteBtn;
     Button editBtn;
 
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -35,6 +36,7 @@ public class RecipeDetailsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ProgressBar progressBar;
 
     public RecipeDetailsFragment() {
         // Required empty public constructor
@@ -76,12 +78,30 @@ public class RecipeDetailsFragment extends Fragment {
 
         String recipeId = RecipeDetailsFragmentArgs.fromBundle(getArguments()).getRecipeId();
 
+        progressBar = view.findViewById(R.id.details_recipe_progressBar);
+
+        nameTv = view.findViewById(R.id.details_recipe_name_ET);
+        idTv = view.findViewById(R.id.details_recipe_Id_ET);
+        descEt = view.findViewById(R.id.details_recipe_desc_ET);
+
+        avatarImv = view.findViewById(R.id.details_recipe_img);
+
         Model.instance.getRecipeById(recipeId, new Model.GetRecipesById() {
             @Override
             public void onComplete(Recipe recipe) {
+                progressBar.setVisibility(View.VISIBLE);
                 nameTv.setText(recipe.getName());
                 idTv.setText(recipe.getId());
                 descEt.setText(recipe.getDesc());
+
+                // displays image on this fragment
+                if (recipe.getImageUrl() != null) {
+                    Picasso.get()
+                            .load(recipe.getImageUrl())
+                            .into(avatarImv);
+                }
+
+                progressBar.setVisibility(View.GONE);
             }
         });
 
@@ -93,24 +113,9 @@ public class RecipeDetailsFragment extends Fragment {
         editBtn = view.findViewById(R.id.details_recipe_edit_btn);
 
         //delete recipe by id and return to home list
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Model.instance.deleteRecipeById(recipeId, new Model.DeleteRecipeById() {
-                    @Override
-                    public void onComplete() {
-                        Navigation.findNavController(nameTv).navigateUp();
-                    }
-                });
-            }
-        });
+        deleteBtn.setOnClickListener(v -> Model.instance.deleteRecipeById(recipeId, () -> Navigation.findNavController(nameTv).navigateUp()));
 
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToRecipeEditFragment(recipeId));
-            }
-        });
+        editBtn.setOnClickListener(v -> Navigation.findNavController(v).navigate(RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToRecipeEditFragment(recipeId)));
 
 //        Button backBtn = view.findViewById(R.id.deta);
 //        backBtn.setOnClickListener((v) -> {

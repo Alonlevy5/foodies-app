@@ -4,11 +4,11 @@ package com.comas.foodies.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.comas.foodies.R;
@@ -22,21 +22,21 @@ public final class FragmentHomeBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ProgressBar HomeFragProgressBar;
-
-  @NonNull
   public final RecyclerView fragmentHomeRv;
 
   @NonNull
   public final FloatingActionButton homeAddBtn;
 
+  @NonNull
+  public final SwipeRefreshLayout homeSwiperefresh;
+
   private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ProgressBar HomeFragProgressBar, @NonNull RecyclerView fragmentHomeRv,
-      @NonNull FloatingActionButton homeAddBtn) {
+      @NonNull RecyclerView fragmentHomeRv, @NonNull FloatingActionButton homeAddBtn,
+      @NonNull SwipeRefreshLayout homeSwiperefresh) {
     this.rootView = rootView;
-    this.HomeFragProgressBar = HomeFragProgressBar;
     this.fragmentHomeRv = fragmentHomeRv;
     this.homeAddBtn = homeAddBtn;
+    this.homeSwiperefresh = homeSwiperefresh;
   }
 
   @Override
@@ -66,12 +66,6 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.Home_frag_progressBar;
-      ProgressBar HomeFragProgressBar = ViewBindings.findChildViewById(rootView, id);
-      if (HomeFragProgressBar == null) {
-        break missingId;
-      }
-
       id = R.id.fragment_home_Rv;
       RecyclerView fragmentHomeRv = ViewBindings.findChildViewById(rootView, id);
       if (fragmentHomeRv == null) {
@@ -84,8 +78,14 @@ public final class FragmentHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHomeBinding((ConstraintLayout) rootView, HomeFragProgressBar,
-          fragmentHomeRv, homeAddBtn);
+      id = R.id.home_swiperefresh;
+      SwipeRefreshLayout homeSwiperefresh = ViewBindings.findChildViewById(rootView, id);
+      if (homeSwiperefresh == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, fragmentHomeRv, homeAddBtn,
+          homeSwiperefresh);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

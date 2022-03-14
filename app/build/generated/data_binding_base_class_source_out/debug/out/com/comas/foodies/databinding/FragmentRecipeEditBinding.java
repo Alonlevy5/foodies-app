@@ -23,6 +23,9 @@ public final class FragmentRecipeEditBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ImageView editImageImgv;
+
+  @NonNull
   public final EditText editRecipeDescET;
 
   @NonNull
@@ -32,23 +35,20 @@ public final class FragmentRecipeEditBinding implements ViewBinding {
   public final Button editRecipeSaveBtn;
 
   @NonNull
-  public final ImageView imageView2;
-
-  @NonNull
   public final TextView textView5;
 
   @NonNull
   public final TextView textView6;
 
   private FragmentRecipeEditBinding(@NonNull ConstraintLayout rootView,
-      @NonNull EditText editRecipeDescET, @NonNull EditText editRecipeNamET,
-      @NonNull Button editRecipeSaveBtn, @NonNull ImageView imageView2, @NonNull TextView textView5,
-      @NonNull TextView textView6) {
+      @NonNull ImageView editImageImgv, @NonNull EditText editRecipeDescET,
+      @NonNull EditText editRecipeNamET, @NonNull Button editRecipeSaveBtn,
+      @NonNull TextView textView5, @NonNull TextView textView6) {
     this.rootView = rootView;
+    this.editImageImgv = editImageImgv;
     this.editRecipeDescET = editRecipeDescET;
     this.editRecipeNamET = editRecipeNamET;
     this.editRecipeSaveBtn = editRecipeSaveBtn;
-    this.imageView2 = imageView2;
     this.textView5 = textView5;
     this.textView6 = textView6;
   }
@@ -80,6 +80,12 @@ public final class FragmentRecipeEditBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.edit_image_imgv;
+      ImageView editImageImgv = ViewBindings.findChildViewById(rootView, id);
+      if (editImageImgv == null) {
+        break missingId;
+      }
+
       id = R.id.edit_recipe_descET;
       EditText editRecipeDescET = ViewBindings.findChildViewById(rootView, id);
       if (editRecipeDescET == null) {
@@ -98,12 +104,6 @@ public final class FragmentRecipeEditBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView2;
-      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView2 == null) {
-        break missingId;
-      }
-
       id = R.id.textView5;
       TextView textView5 = ViewBindings.findChildViewById(rootView, id);
       if (textView5 == null) {
@@ -116,8 +116,8 @@ public final class FragmentRecipeEditBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentRecipeEditBinding((ConstraintLayout) rootView, editRecipeDescET,
-          editRecipeNamET, editRecipeSaveBtn, imageView2, textView5, textView6);
+      return new FragmentRecipeEditBinding((ConstraintLayout) rootView, editImageImgv,
+          editRecipeDescET, editRecipeNamET, editRecipeSaveBtn, textView5, textView6);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

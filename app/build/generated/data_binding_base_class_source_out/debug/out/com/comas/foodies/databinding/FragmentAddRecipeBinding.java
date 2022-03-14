@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -28,10 +29,16 @@ public final class FragmentAddRecipeBinding implements ViewBinding {
   public final ImageView addRecipeAvatarImg;
 
   @NonNull
+  public final ImageButton addRecipeCameraImgBtn;
+
+  @NonNull
   public final Button addRecipeCancelBtn;
 
   @NonNull
   public final EditText addRecipeDescEt;
+
+  @NonNull
+  public final ImageButton addRecipeGalleryImgBtn;
 
   @NonNull
   public final EditText addRecipeIdEt;
@@ -61,16 +68,19 @@ public final class FragmentAddRecipeBinding implements ViewBinding {
   public final TextView textView4;
 
   private FragmentAddRecipeBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageView addRecipeAvatarImg, @NonNull Button addRecipeCancelBtn,
-      @NonNull EditText addRecipeDescEt, @NonNull EditText addRecipeIdEt,
+      @NonNull ImageView addRecipeAvatarImg, @NonNull ImageButton addRecipeCameraImgBtn,
+      @NonNull Button addRecipeCancelBtn, @NonNull EditText addRecipeDescEt,
+      @NonNull ImageButton addRecipeGalleryImgBtn, @NonNull EditText addRecipeIdEt,
       @NonNull EditText addRecipeLocation, @NonNull FloatingActionButton addRecipeLocationBtn,
       @NonNull EditText addRecipeNameEt, @NonNull Button addRecipeSaveBtn,
       @NonNull ProgressBar mainProgressbar, @NonNull TextView textView2,
       @NonNull TextView textView3, @NonNull TextView textView4) {
     this.rootView = rootView;
     this.addRecipeAvatarImg = addRecipeAvatarImg;
+    this.addRecipeCameraImgBtn = addRecipeCameraImgBtn;
     this.addRecipeCancelBtn = addRecipeCancelBtn;
     this.addRecipeDescEt = addRecipeDescEt;
+    this.addRecipeGalleryImgBtn = addRecipeGalleryImgBtn;
     this.addRecipeIdEt = addRecipeIdEt;
     this.addRecipeLocation = addRecipeLocation;
     this.addRecipeLocationBtn = addRecipeLocationBtn;
@@ -115,6 +125,12 @@ public final class FragmentAddRecipeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.addRecipe_camera_imgBtn;
+      ImageButton addRecipeCameraImgBtn = ViewBindings.findChildViewById(rootView, id);
+      if (addRecipeCameraImgBtn == null) {
+        break missingId;
+      }
+
       id = R.id.addRecipe_cancel_btn;
       Button addRecipeCancelBtn = ViewBindings.findChildViewById(rootView, id);
       if (addRecipeCancelBtn == null) {
@@ -124,6 +140,12 @@ public final class FragmentAddRecipeBinding implements ViewBinding {
       id = R.id.addRecipe_desc_et;
       EditText addRecipeDescEt = ViewBindings.findChildViewById(rootView, id);
       if (addRecipeDescEt == null) {
+        break missingId;
+      }
+
+      id = R.id.addRecipe_gallery_imgBtn;
+      ImageButton addRecipeGalleryImgBtn = ViewBindings.findChildViewById(rootView, id);
+      if (addRecipeGalleryImgBtn == null) {
         break missingId;
       }
 
@@ -182,9 +204,9 @@ public final class FragmentAddRecipeBinding implements ViewBinding {
       }
 
       return new FragmentAddRecipeBinding((ConstraintLayout) rootView, addRecipeAvatarImg,
-          addRecipeCancelBtn, addRecipeDescEt, addRecipeIdEt, addRecipeLocation,
-          addRecipeLocationBtn, addRecipeNameEt, addRecipeSaveBtn, mainProgressbar, textView2,
-          textView3, textView4);
+          addRecipeCameraImgBtn, addRecipeCancelBtn, addRecipeDescEt, addRecipeGalleryImgBtn,
+          addRecipeIdEt, addRecipeLocation, addRecipeLocationBtn, addRecipeNameEt, addRecipeSaveBtn,
+          mainProgressbar, textView2, textView3, textView4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
