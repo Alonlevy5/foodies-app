@@ -8,12 +8,19 @@ import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.navigation.Navigation;
 
+import com.comas.foodies.model.Model;
+import com.comas.foodies.model.Recipe;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -39,9 +46,11 @@ public class MapsActivity extends AppCompatActivity {
     private ConnectivityManager manager;
     private NetworkInfo networkInfo;
     private Geocoder geocoder;
+    private TextView editTextLocation;
     private double selectedLat ,selectedLng ;
     private List<Address> addresses;
     private String selectedAddress;
+    private Button saveLocationBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +60,8 @@ public class MapsActivity extends AppCompatActivity {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.maps);
+        saveLocationBtn = findViewById(R.id.location_save);
+        editTextLocation = findViewById(R.id.addRecipe_location);
         client = LocationServices.getFusedLocationProviderClient(this);
 
         if (ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -61,7 +72,9 @@ public class MapsActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
         }
 
+
     }
+
 
     private void getCurrentLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -85,8 +98,21 @@ public class MapsActivity extends AppCompatActivity {
                         public void onMapReady(@NonNull GoogleMap googleMap) {
                             mMap = googleMap;
                             LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
+                            String address = latLng.toString();
                             googleMap.addMarker(new MarkerOptions().position(latLng).title("You are here"));
                             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
+
+                            saveLocationBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    editTextLocation.setText(address);
+                                    Recipe recipe = new Recipe();
+                                    AddRecipeFragment addRecipeFragment = new AddRecipeFragment();
+                                    Model.instance.addRecipe(recipe, ()->{
+                                        Navigation.findNavController(addRecipeFragment.nameEt).navigateUp();
+                                    });
+                                }
+                            });
 
                             mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                                 @Override
@@ -116,6 +142,9 @@ public class MapsActivity extends AppCompatActivity {
         });
     }
 
+
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
@@ -135,15 +164,15 @@ public class MapsActivity extends AppCompatActivity {
         networkInfo = manager.getActiveNetworkInfo();
     }
 
-    private void GetAddress(double mLat, double mLng){
+    private void GetAddress(double mLat, double mLng) {
         geocoder = new Geocoder(MapsActivity.this, Locale.getDefault());
-        if(mLat != 0){
+        if (mLat != 0) {
             try {
                 addresses = geocoder.getFromLocation(mLat, mLng, 1);
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-            if(addresses != null){
+            if (addresses != null) {
                 String mAddress = addresses.get(0).getAddressLine(0);
                 String city = addresses.get(0).getLocality();
                 String state = addresses.get(0).getAdminArea();
@@ -153,18 +182,25 @@ public class MapsActivity extends AppCompatActivity {
 
                 selectedAddress = mAddress;
 
-                if(mAddress != null){
-                    LatLng latLng = new LatLng(mLat,mLng);
+
+
+
+
+                if (mAddress != null) {
+                    LatLng latLng = new LatLng(mLat, mLng);
                     mMap.addMarker(new MarkerOptions().position(latLng).title(selectedAddress));
-                }else {
-                    Toast.makeText(this,"Something went wrong", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
-            }else {
+            } else {
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show();
             }
-        }else{
-            Toast.makeText(this," LatLng null", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, " LatLng null", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+
 
 }

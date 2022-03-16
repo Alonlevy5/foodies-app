@@ -7,7 +7,7 @@
     tools:context=".RecipeEditFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/edit_image_imgv"
         android:layout_width="0dp"
         android:layout_height="225dp"
         android:src="@drawable/ic_menu_slideshow"
@@ -24,7 +24,7 @@
         android:text="Recipe Name"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_image_imgv" />
 
     <EditText
         android:id="@+id/edit_recipe_namET"
@@ -35,7 +35,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_image_imgv" />
 
     <TextView
         android:id="@+id/textView6"

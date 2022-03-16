@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/recipelist_item_image"
+        android:id="@+id/recipelistRow_item_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/ic_menu_gallery" />
 
     <TextView
-        android:id="@+id/recipelist_item_text"
+        android:id="@+id/recipelistRow_item_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -30,6 +30,6 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/recipelist_item_image"
+        app:layout_constraintStart_toEndOf="@+id/recipelistRow_item_image"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

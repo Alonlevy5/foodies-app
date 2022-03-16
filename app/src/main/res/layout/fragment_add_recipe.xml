@@ -98,6 +98,7 @@
         android:layout_height="156dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.972" />
@@ -129,6 +130,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4" />
 
+    <ImageButton
+        android:id="@+id/addRecipe_camera_imgBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addRecipe_avatar_img"
+        app:layout_constraintEnd_toEndOf="@+id/addRecipe_avatar_img"
+        app:srcCompat="@drawable/ic_menu_camera" />
+
+    <ImageButton
+        android:id="@+id/addRecipe_gallery_imgBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/addRecipe_avatar_img"
+        app:layout_constraintStart_toStartOf="@+id/addRecipe_avatar_img"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addRecipe_locationBtn"
         android:layout_width="47dp"
@@ -157,9 +176,3 @@
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    xmlns:tools="http://schemas.android.com/tools"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    tools:context=".ui.recipe.RecipeCreateFragment"/>-->
