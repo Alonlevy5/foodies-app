@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\moshi\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_nav_header_main.xml.flat",
-        "source": "C:\\Users\\moshi\\foodies-app\\app\\src\\main\\res\\layout\\nav_header_main.xml"
-    },
-    {
         "merged": "C:\\Users\\moshi\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\moshi\\foodies-app\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\moshi\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\layout_nav_header_main.xml.flat",
+        "source": "C:\\Users\\moshi\\foodies-app\\app\\src\\main\\res\\layout\\nav_header_main.xml"
     },
     {
         "merged": "C:\\Users\\moshi\\foodies-app\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v21_ic_menu_slideshow.xml.flat",

@@ -29,6 +29,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView createText;
 
   @NonNull
+  public final TextView forgotPassword;
+
+  @NonNull
   public final Button loginBtn;
 
   @NonNull
@@ -44,11 +47,13 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextView textView8;
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView, @NonNull EditText Email,
-      @NonNull TextView createText, @NonNull Button loginBtn, @NonNull EditText password,
-      @NonNull ProgressBar progressBar2, @NonNull TextView textView7, @NonNull TextView textView8) {
+      @NonNull TextView createText, @NonNull TextView forgotPassword, @NonNull Button loginBtn,
+      @NonNull EditText password, @NonNull ProgressBar progressBar2, @NonNull TextView textView7,
+      @NonNull TextView textView8) {
     this.rootView = rootView;
     this.Email = Email;
     this.createText = createText;
+    this.forgotPassword = forgotPassword;
     this.loginBtn = loginBtn;
     this.password = password;
     this.progressBar2 = progressBar2;
@@ -95,6 +100,12 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.forgotPassword;
+      TextView forgotPassword = ViewBindings.findChildViewById(rootView, id);
+      if (forgotPassword == null) {
+        break missingId;
+      }
+
       id = R.id.loginBtn;
       Button loginBtn = ViewBindings.findChildViewById(rootView, id);
       if (loginBtn == null) {
@@ -125,8 +136,8 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((ConstraintLayout) rootView, Email, createText, loginBtn,
-          password, progressBar2, textView7, textView8);
+      return new ActivityLoginBinding((ConstraintLayout) rootView, Email, createText,
+          forgotPassword, loginBtn, password, progressBar2, textView7, textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
