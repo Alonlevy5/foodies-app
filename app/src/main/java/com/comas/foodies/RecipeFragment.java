@@ -17,7 +17,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
@@ -51,8 +50,8 @@ public class RecipeFragment extends Fragment {
 
         mRecipeImageView = view.findViewById(R.id.details_recipe_img);
         mEditImageButton = view.findViewById(R.id.recipe_frag_edit_image);
-        mRecipeNameEditText = view.findViewById(R.id.details_recipe_name_ET);
-        mRecipeDescEditText = view.findViewById(R.id.details_recipe_Id_ET);
+        mRecipeNameEditText = view.findViewById(R.id.details_recipe_name_TV);
+        mRecipeDescEditText = view.findViewById(R.id.details_recipe_Id_TV);
         mEditButton = view.findViewById(R.id.details_recipe_edit_btn);
         mDeleteButton = view.findViewById(R.id.details_recipe_delete_btn);
         mLocationEditText = view.findViewById(R.id.addRecipe_location);

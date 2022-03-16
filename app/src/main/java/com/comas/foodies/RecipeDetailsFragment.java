@@ -80,9 +80,9 @@ public class RecipeDetailsFragment extends Fragment {
 
         progressBar = view.findViewById(R.id.details_recipe_progressBar);
 
-        nameTv = view.findViewById(R.id.details_recipe_name_ET);
-        idTv = view.findViewById(R.id.details_recipe_Id_ET);
-        descEt = view.findViewById(R.id.details_recipe_desc_ET);
+        nameTv = view.findViewById(R.id.details_recipe_name_TV);
+        idTv = view.findViewById(R.id.details_recipe_Id_TV);
+        descEt = view.findViewById(R.id.details_recipe_desc_TV);
 
         avatarImv = view.findViewById(R.id.details_recipe_img);
 
@@ -105,9 +105,9 @@ public class RecipeDetailsFragment extends Fragment {
             }
         });
 
-        nameTv = view.findViewById(R.id.details_recipe_name_ET);
-        idTv = view.findViewById(R.id.details_recipe_Id_ET);
-        descEt = view.findViewById(R.id.details_recipe_desc_ET);
+        nameTv = view.findViewById(R.id.details_recipe_name_TV);
+        idTv = view.findViewById(R.id.details_recipe_Id_TV);
+        descEt = view.findViewById(R.id.details_recipe_desc_TV);
 
         deleteBtn = view.findViewById(R.id.details_recipe_delete_btn);
         editBtn = view.findViewById(R.id.details_recipe_edit_btn);

@@ -18,8 +18,8 @@
 
     <ImageButton
         android:id="@+id/recipe_frag_edit_image"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="#00FFFFFF"
@@ -50,33 +50,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details_recipe_name_tv" />
 
-    <EditText
-        android:id="@+id/details_recipe_name_ET"
+    <TextView
+        android:id="@+id/details_recipe_name_TV"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/details_recipe_name_tv"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/details_recipe_name_tv"
-        app:layout_constraintTop_toTopOf="@+id/details_recipe_name_tv" />
+        app:layout_constraintTop_toTopOf="@+id/details_recipe_name_tv"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/details_recipe_Id_ET"
+    <TextView
+        android:id="@+id/details_recipe_Id_TV"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/details_recipe_id_tv"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/details_recipe_id_tv"
-        app:layout_constraintTop_toTopOf="@+id/details_recipe_id_tv" />
+        app:layout_constraintTop_toTopOf="@+id/details_recipe_id_tv"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/details_recipe_edit_btn"
@@ -114,28 +120,32 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614" />
+        app:layout_constraintVertical_bias="0.635" />
 
     <TextView
         android:id="@+id/details_recipe_desc_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="115dp"
+        android:layout_height="30dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="352dp"
-        android:text="description:"
+        android:layout_marginTop="48dp"
+        android:text="Description:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/details_recipe_id_tv" />
 
-    <EditText
-        android:id="@+id/details_recipe_desc_ET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/details_recipe_desc_TV"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/details_recipe_desc_tv"
-        app:layout_constraintTop_toBottomOf="@+id/details_recipe_Id_ET" />
+        app:layout_constraintTop_toBottomOf="@+id/details_recipe_Id_TV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
