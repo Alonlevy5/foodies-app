@@ -40,7 +40,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
 
-    EditText mFullName,mEmail,mPassword,mPhone;
+    EditText mFullName, mEmail, mPassword, mPhone;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth; //provided by Firebase using to  register
@@ -62,7 +62,7 @@ public class Register extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         // Need to check if usr logged and if so, not to show the register activity
-        if(fAuth.getCurrentUser() != null) {
+        if (fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
@@ -72,10 +72,15 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
                 //checks vallid data
                 if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required");
+                    return;
+                }
+                if (!email.matches(emailPattern)) {
+                    mEmail.setError("Email not valid!");
                     return;
                 }
                 if (TextUtils.isEmpty(password)) {
@@ -108,7 +113,7 @@ public class Register extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
 
