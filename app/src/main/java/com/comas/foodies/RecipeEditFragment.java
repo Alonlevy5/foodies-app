@@ -40,7 +40,6 @@ public class RecipeEditFragment extends Fragment {
 
 
     ImageButton editBtn;
-    ImageView AvatarImv;
 
 
     @Override
