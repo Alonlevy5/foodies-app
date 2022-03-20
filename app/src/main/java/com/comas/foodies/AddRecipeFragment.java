@@ -77,17 +77,18 @@ public class AddRecipeFragment extends Fragment {
         cameraBtn = view.findViewById(R.id.addRecipe_camera_imgBtn);
         galleryBtn = view.findViewById(R.id.addRecipe_gallery_imgBtn);
         avatarImv = view.findViewById(R.id.addRecipe_avatar_img);
-
         locationEt = view.findViewById(R.id.addRecipe_location);
-        //buttons handling
-        saveBtn = view.findViewById(R.id.addRecipe_save_btn);
-        cancelBtn = view.findViewById(R.id.addRecipe_cancel_btn);
         locationBtn = view.findViewById(R.id.addRecipe_locationBtn);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+
+        //buttons handling
         progressBar = view.findViewById(R.id.main_progressbar);
         progressBar.setVisibility(View.GONE);
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        saveBtn = view.findViewById(R.id.addRecipe_save_btn);
+        cancelBtn = view.findViewById(R.id.addRecipe_cancel_btn);
         saveBtn.setOnClickListener(v -> save());
         cancelBtn.setOnClickListener(v -> Navigation.findNavController(v).navigateUp());
+
         locationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
