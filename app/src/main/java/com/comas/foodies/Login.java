@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +25,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
     EditText mEmail,mPassword;
@@ -28,6 +33,8 @@ public class Login extends AppCompatActivity {
     TextView mCreateBtn ,forgotTextLink;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +49,35 @@ public class Login extends AppCompatActivity {
         mCreateBtn = findViewById(R.id.createText);
         forgotTextLink = findViewById(R.id.forgotPassword);
 
+
+        // This what keeps the user logged in using FireBase
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent i = new Intent(Login.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        } else {
+            // User is signed out
+            Log.d("TAG", "onAuthStateChanged:signed_out");
+        }
+
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-                //checks vallid data
+
+                //checks valid data
                 if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required");
+                    return;
+                }
+                if (!email.matches(emailPattern)) {
+                    mEmail.setError("Email not valid!");
                     return;
                 }
                 if (TextUtils.isEmpty(password)) {
@@ -62,6 +88,8 @@ public class Login extends AppCompatActivity {
                     mPassword.setError("Password must be 6 or more Characters");
                     return;
                 }
+
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 // Usr Auth
@@ -75,6 +103,17 @@ public class Login extends AppCompatActivity {
                         }else{
                             Toast.makeText(Login.this, "Error " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                        if (firebaseUser != null) {
+                            String userId = firebaseUser.getUid();
+                            String userEmail = firebaseUser.getEmail();
+                            sharedPref = getPreferences(MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.putString("firebasekey", userId);
+                            editor.commit();
                         }
                     }
                 });
