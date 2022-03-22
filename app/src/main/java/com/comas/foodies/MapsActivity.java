@@ -97,11 +97,21 @@ com.google.android.gms.location.LocationListener{
         setContentView(R.layout.activity_maps_current_place);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.maps);
+
         saveLocationBtn = findViewById(R.id.location_save);
         editTextLocation = findViewById(R.id.addRecipe_location);
         client = LocationServices.getFusedLocationProviderClient(this);
+
+            mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.maps);
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+
+
+
 
         if (ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -189,6 +199,8 @@ com.google.android.gms.location.LocationListener{
                         PackageManager.PERMISSION_GRANTED){
             return;
         }
+
+
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest,this);
 
     }
@@ -214,7 +226,7 @@ com.google.android.gms.location.LocationListener{
         }
 
     }
-
+  /*
     @Override
     public void onLocationChanged(@NonNull Location location) {
 
@@ -231,6 +243,8 @@ com.google.android.gms.location.LocationListener{
 
 
     }
+
+   */
 
     public void onStart(){
        super.onStart();
@@ -376,6 +390,8 @@ com.google.android.gms.location.LocationListener{
     }
 
 
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
 
-
+    }
 }
