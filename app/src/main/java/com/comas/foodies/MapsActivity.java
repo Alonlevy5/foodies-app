@@ -1,45 +1,84 @@
 package com.comas.foodies;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.preference.DialogPreference;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.location.LocationRequest;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.Navigation;
 
 import com.comas.foodies.model.Model;
 import com.comas.foodies.model.Recipe;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.Api;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+import dalvik.system.DexFile;
 
 
-public class MapsActivity extends AppCompatActivity {
+@SuppressWarnings("ALL")
+public class MapsActivity extends FragmentActivity implements  OnMapReadyCallback,
+GoogleApiClient.ConnectionCallbacks,
+GoogleApiClient.OnConnectionFailedListener,
+com.google.android.gms.location.LocationListener{
 
     private GoogleMap mMap;
+    private GoogleApiClient mGoogleApiClient;
+    private Location mLocation ;
+    private LocationManager mlocationManager;
+    private LocationRequest mLocationRequest;
+    private com.google.android.gms.location.LocationListener locationListener;
+    private long UPDATE_INTERVAL = 2000;
+    private long FASTEST_INTERVAL = 5000;
+    private LocationManager locationManager;
+    private LatLng latLng;
+    private boolean isPermission ;
     private SupportMapFragment mapFragment;
     private FusedLocationProviderClient client;
     private final int REQUEST_CODE = 111;
@@ -74,6 +113,142 @@ public class MapsActivity extends AppCompatActivity {
 
 
     }
+
+    private boolean checkLocation() {
+        if(!isLocationEnabled()){
+            showAlert();
+        }
+        return isLocationEnabled();
+    }
+
+    private void showAlert() {
+        final android.app.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Enable Location")
+                .setMessage("Your locations Settings is set to 'Off'.\nPlease Enable Location to " )
+                .setPositiveButton("Location Setting", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent myIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+                        startActivity(myIntent);
+                    }
+
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        dialog.show();
+
+    }
+
+    private boolean isLocationEnabled() {
+        locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)||
+                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+    }
+
+    private boolean requestSinglePermission() {
+        return true;
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED){
+
+            return;
+        }
+
+        startLocationUpdates();
+        mLocation= LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        if(mLocation == null){
+            startLocationUpdates();;
+        }
+        else
+        {
+            Toast.makeText(this,"Location not Detected",Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void startLocationUpdates() {
+
+        mLocationRequest = com.google.android.gms.location.LocationRequest.create()
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(UPDATE_INTERVAL)
+                .setFastestInterval(FASTEST_INTERVAL);
+
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!=
+                PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) !=
+                        PackageManager.PERMISSION_GRANTED){
+            return;
+        }
+        LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,mLocationRequest,this);
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap= googleMap;
+
+        if(latLng != null){
+            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Current Localion"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,14F));
+
+        }
+
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+
+        String msg = "Updated Location: " +
+                Double.toString(location.getLatitude()) + "," +
+                Double.toString(location.getLongitude());
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+        latLng = new LatLng(location.getLatitude(),location.getLatitude());
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.maps);
+        mapFragment.getMapAsync(this);
+
+
+
+    }
+
+    public void onStart(){
+       super.onStart();
+
+       if(mGoogleApiClient != null){
+           mGoogleApiClient.connect();
+       }
+    }
+
+    public void  onStop(){
+        super.onStop();
+
+        if(mGoogleApiClient.isConnected()){
+            mGoogleApiClient.disconnect();
+        }
+    }
+
+
 
 
     private void getCurrentLocation() {
