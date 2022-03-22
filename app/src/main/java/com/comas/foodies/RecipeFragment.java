@@ -24,9 +24,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RecipeFragment extends Fragment {
 
-    //TODO need to fix problem with recipe Details and Crate xml design not appearing and cannot change
-
-    private RecipeViewModel mViewModel;
 
     protected ImageView mRecipeImageView;
     protected ImageButton mEditImageButton;
@@ -38,9 +35,7 @@ public class RecipeFragment extends Fragment {
     protected Button mDeleteButton;
     ProgressBar progressBar;
 
-//    public static RecipeFragment newInstance() {
-//        return new RecipeFragment();
-//    }
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -67,8 +62,8 @@ public class RecipeFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(RecipeViewModel.class);
-        // TODO: Use the ViewModel
+
+
     }
 
     private void handleSave(View view) {
