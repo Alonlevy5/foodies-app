@@ -73,6 +73,7 @@ public class AddRecipeFragment extends Fragment {
         descEt = view.findViewById(R.id.addRecipe_desc_et);
         idEt = view.findViewById(R.id.addRecipe_id_et);
 
+
         //camera part
         cameraBtn = view.findViewById(R.id.addRecipe_camera_imgBtn);
         galleryBtn = view.findViewById(R.id.addRecipe_gallery_imgBtn);
@@ -96,10 +97,9 @@ public class AddRecipeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        Bundle bundle = this.getArguments();
 
         cameraBtn.setOnClickListener(v -> openCamera());
-
 
         galleryBtn.setOnClickListener(v -> openGallery());
 

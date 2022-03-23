@@ -12,65 +12,64 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
 import android.os.Bundle;
-import android.preference.DialogPreference;
+import android.os.Looper;
 import android.provider.Settings;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.comas.foodies.model.Model;
+import com.comas.foodies.model.Recipe;
+import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.Navigation;
 
-import com.comas.foodies.model.Model;
-import com.comas.foodies.model.Recipe;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.FileDescriptor;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
-
-import dalvik.system.DexFile;
+import java.util.Map;
 
 
 @SuppressWarnings("ALL")
 public class MapsActivity extends FragmentActivity implements  OnMapReadyCallback,
-GoogleApiClient.ConnectionCallbacks,
-GoogleApiClient.OnConnectionFailedListener,
-com.google.android.gms.location.LocationListener{
+        GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener,
+        com.google.android.gms.location.LocationListener{
 
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     private Location mLocation ;
+    private AddRecipeFragment addRecipeFragment;
     private LocationManager mlocationManager;
     private LocationRequest mLocationRequest;
     private com.google.android.gms.location.LocationListener locationListener;
@@ -85,10 +84,14 @@ com.google.android.gms.location.LocationListener{
     private ConnectivityManager manager;
     private NetworkInfo networkInfo;
     private Geocoder geocoder;
+    private FloatingActionButton floatingActionButton;
     private TextView editTextLocation;
     private double selectedLat ,selectedLng ;
     private List<Address> addresses;
     private String selectedAddress;
+    DatabaseReference databaseReference ;
+    private FirebaseDatabase tracker;
+    private DatabaseReference databaseLocation;
     private Button saveLocationBtn;
 
     @Override
@@ -100,15 +103,18 @@ com.google.android.gms.location.LocationListener{
 
         saveLocationBtn = findViewById(R.id.location_save);
         editTextLocation = findViewById(R.id.addRecipe_location);
+        floatingActionButton =findViewById(R.id.addRecipe_locationBtn);
         client = LocationServices.getFusedLocationProviderClient(this);
-
-            mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                    .findFragmentById(R.id.maps);
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(LocationServices.API)
-                    .build();
+        tracker = FirebaseDatabase.getInstance();
+        databaseLocation = tracker.getReference("");
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.maps);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
 
 
 
@@ -120,6 +126,7 @@ com.google.android.gms.location.LocationListener{
             ActivityCompat.requestPermissions(MapsActivity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
         }
+
 
 
     }
@@ -187,11 +194,64 @@ com.google.android.gms.location.LocationListener{
     }
 
     private void startLocationUpdates() {
-
+        saveLocationBtn.setVisibility(View.VISIBLE);
         mLocationRequest = com.google.android.gms.location.LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval(UPDATE_INTERVAL)
                 .setFastestInterval(FASTEST_INTERVAL);
+
+        LocationServices.getFusedLocationProviderClient(MapsActivity.this)
+                .requestLocationUpdates(mLocationRequest, new LocationCallback() {
+                    @Override
+                    public void onLocationResult(@NonNull LocationResult locationResult) {
+                        super.onLocationResult(locationResult);
+                        LocationServices.getFusedLocationProviderClient(MapsActivity.this)
+                                .removeLocationUpdates(this);
+                        if(locationResult != null && locationResult.getLocations().size() > 0 ){
+                            int latestLocationIndex = locationResult.getLocations().size() - 1 ;
+                            double latitude = locationResult
+                                    .getLocations().get(latestLocationIndex).getLatitude();
+                            double longitude =
+                                    locationResult.getLocations().get(latestLocationIndex).getLongitude();
+                            String ltude = Double.toString(latitude);
+                            String logtude = Double.toString(longitude);
+                            String combine = ltude + " - " + logtude ;
+
+
+                            saveLocationBtn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    databaseLocation.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot child : snapshot.child("lokasi3").getChildren()) {
+                                                AddRecipeFragment lokasi3 = snapshot.getValue(AddRecipeFragment.class);
+                                                String latitude = child.child("latitude").getValue().toString();
+                                                String longitude = child.child("longitude").getValue().toString();
+                                                double loclatitude = Double.parseDouble(latitude);
+                                                double loclongitude = Double.parseDouble(longitude);
+                                                LatLng cod = new LatLng(loclatitude, loclongitude);
+                                                mMap.addMarker(new MarkerOptions().position(cod).title(""));
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
+                                    Recipe recipe = new Recipe();
+                                    Model.instance.addRecipe(recipe, ()->{
+                                        Navigation.findNavController(addRecipeFragment.nameEt).navigateUp();
+                                    });
+                                }
+
+                            });
+
+                        }
+                    }
+                }, Looper.getMainLooper());
 
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!=
                 PackageManager.PERMISSION_GRANTED &&
@@ -247,11 +307,11 @@ com.google.android.gms.location.LocationListener{
    */
 
     public void onStart(){
-       super.onStart();
+        super.onStart();
 
-       if(mGoogleApiClient != null){
-           mGoogleApiClient.connect();
-       }
+        if(mGoogleApiClient != null){
+            mGoogleApiClient.connect();
+        }
     }
 
     public void  onStop(){
@@ -294,6 +354,25 @@ com.google.android.gms.location.LocationListener{
                             saveLocationBtn.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
+                                    databaseLocation.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            for (DataSnapshot child : snapshot.child("lokasi3").getChildren()) {
+                                                AddRecipeFragment lokasi3 = snapshot.getValue(AddRecipeFragment.class);
+                                                String latitude = child.child("latitude").getValue().toString();
+                                                String longitude = child.child("longitude").getValue().toString();
+                                                double loclatitude = Double.parseDouble(latitude);
+                                                double loclongitude = Double.parseDouble(longitude);
+                                                LatLng cod = new LatLng(loclatitude, loclongitude);
+                                                mMap.addMarker(new MarkerOptions().position(cod).title(""));
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
                                     editTextLocation.setText(address);
                                     Recipe recipe = new Recipe();
                                     AddRecipeFragment addRecipeFragment = new AddRecipeFragment();

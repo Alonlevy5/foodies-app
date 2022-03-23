@@ -49,7 +49,6 @@ public class RecipeFragment extends Fragment {
         mRecipeDescEditText = view.findViewById(R.id.details_recipe_Id_TV);
         mEditButton = view.findViewById(R.id.details_recipe_edit_btn);
         mDeleteButton = view.findViewById(R.id.details_recipe_delete_btn);
-        mLocationEditText = view.findViewById(R.id.addRecipe_location);
         mLocationBtn = view.findViewById(R.id.addRecipe_locationBtn);
         progressBar = view.findViewById(R.id.details_recipe_progressBar);
         progressBar.setVisibility(View.GONE);
