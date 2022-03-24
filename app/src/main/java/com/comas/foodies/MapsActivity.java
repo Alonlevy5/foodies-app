@@ -94,6 +94,7 @@ public class MapsActivity extends FragmentActivity implements  OnMapReadyCallbac
     private DatabaseReference databaseLocation;
     private Button saveLocationBtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,8 +106,6 @@ public class MapsActivity extends FragmentActivity implements  OnMapReadyCallbac
         editTextLocation = findViewById(R.id.addRecipe_location);
         floatingActionButton =findViewById(R.id.addRecipe_locationBtn);
         client = LocationServices.getFusedLocationProviderClient(this);
-        tracker = FirebaseDatabase.getInstance();
-        databaseLocation = tracker.getReference("");
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.maps);
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -216,16 +215,20 @@ public class MapsActivity extends FragmentActivity implements  OnMapReadyCallbac
                             String ltude = Double.toString(latitude);
                             String logtude = Double.toString(longitude);
                             String combine = ltude + " - " + logtude ;
+                            editTextLocation.setText(combine);
 
 
                             saveLocationBtn.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
+                                    tracker = FirebaseDatabase.getInstance();
+                                    databaseLocation = tracker.getReference("recipes");
                                     databaseLocation.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            for (DataSnapshot child : snapshot.child("lokasi3").getChildren()) {
-                                                AddRecipeFragment lokasi3 = snapshot.getValue(AddRecipeFragment.class);
+
+                                            for (DataSnapshot child : snapshot.child("recipes").getChildren()) {
+                                                AddRecipeFragment addRecipeFragment = snapshot.getValue(AddRecipeFragment.class);
                                                 String latitude = child.child("latitude").getValue().toString();
                                                 String longitude = child.child("longitude").getValue().toString();
                                                 double loclatitude = Double.parseDouble(latitude);
@@ -357,8 +360,8 @@ public class MapsActivity extends FragmentActivity implements  OnMapReadyCallbac
                                     databaseLocation.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            for (DataSnapshot child : snapshot.child("lokasi3").getChildren()) {
-                                                AddRecipeFragment lokasi3 = snapshot.getValue(AddRecipeFragment.class);
+                                            for (DataSnapshot child : snapshot.child("recipes").getChildren()) {
+                                                AddRecipeFragment recipeFragment = snapshot.getValue(AddRecipeFragment.class);
                                                 String latitude = child.child("latitude").getValue().toString();
                                                 String longitude = child.child("longitude").getValue().toString();
                                                 double loclatitude = Double.parseDouble(latitude);

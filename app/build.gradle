@@ -61,6 +61,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage'
     implementation 'com.karumi:dexter:6.2.3'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.firebase:firebase-firestore:24.0.2'
+
 
 
 
