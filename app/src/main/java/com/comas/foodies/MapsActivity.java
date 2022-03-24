@@ -215,7 +215,7 @@ public class MapsActivity extends FragmentActivity implements  OnMapReadyCallbac
                             String ltude = Double.toString(latitude);
                             String logtude = Double.toString(longitude);
                             String combine = ltude + " - " + logtude ;
-                            editTextLocation.setText(combine);
+
 
 
                             saveLocationBtn.setOnClickListener(new View.OnClickListener() {
