@@ -292,21 +292,15 @@ public class MapsActivity extends FragmentActivity implements  OnMapReadyCallbac
   /*
     @Override
     public void onLocationChanged(@NonNull Location location) {
-
         String msg = "Updated Location: " +
                 Double.toString(location.getLatitude()) + "," +
                 Double.toString(location.getLongitude());
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
         latLng = new LatLng(location.getLatitude(),location.getLatitude());
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.maps);
         mapFragment.getMapAsync(this);
-
-
-
     }
-
    */
 
     public void onStart(){
